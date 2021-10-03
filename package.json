@@ -10,6 +10,8 @@
   "author": "Olesia",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^16.10.2",
+    "@types/react": "^17.0.26",
     "@types/react-dom": "^17.0.9",
     "core-js": "^3.18.1",
     "raf": "^3.4.1",
