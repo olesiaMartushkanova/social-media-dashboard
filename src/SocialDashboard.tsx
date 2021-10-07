@@ -1,6 +1,6 @@
 import React from 'react';
 import SocialTile from './components/SocialTile/SocialTile';
-// import { ReactComponent as MyImage } from './images/icon-facebook.svg';
+import MyImage from './images/icon-facebook.svg';
 
 const SocialDashboard = () => {
   return (
@@ -14,7 +14,7 @@ const SocialDashboard = () => {
         iconText='@nathanf'
         followersNumber={1987}
         todayNumber={12}
-        // iconSrc={MyImage}
+        iconSrc={MyImage}
       />
       <div>Overview</div>
       <div>Social sub-tiles here</div>

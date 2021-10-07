@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ISocialTile {
   iconText: string;
-  iconSrc?: string;
+  iconSrc?: any;
   followersNumber: number;
   todayNumber: number;
   isFollowers?: boolean;
