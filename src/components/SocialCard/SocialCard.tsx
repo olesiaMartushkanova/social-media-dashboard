@@ -1,14 +1,22 @@
 import React from 'react';
 
-interface ISocialTile {
+// SocialCard includes all the basic styles for light mode
+// SocialCard includes all the basic styles for dark mode
+// SocialCard is reusable component
+
+// TODO:
+//  - add increment or decrement sign to today's number
+//  - add style top line
+
+interface ISocialCard {
   iconText: string;
   iconSrc?: any;
   followersNumber: number;
-  todayNumber: number;
   isFollowers?: boolean;
+  todayNumber: number;
 }
 
-const SocialTile = (props: ISocialTile) => {
+const SocialCard = (props: ISocialCard) => {
   const { iconSrc, iconText, followersNumber, todayNumber, isFollowers } =
     props;
 
@@ -28,4 +36,4 @@ const SocialTile = (props: ISocialTile) => {
   );
 };
 
-export default SocialTile;
+export default SocialCard;

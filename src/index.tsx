@@ -6,11 +6,11 @@ import 'core-js/features/promise';
 import 'core-js/features/set';
 import 'raf/polyfill';
 import 'whatwg-fetch';
-import SocialDashboard from './SocialDashboard';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SocialDashboard />
+    <App />
   </React.StrictMode>,
   document.getElementById('app-root')
 );
