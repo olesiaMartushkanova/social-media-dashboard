@@ -7,32 +7,33 @@ import React from 'react';
 // TODO:
 //  - add increment or decrement sign to today's number
 //  - add style top line
+// - add 'K' to interactions number
 
 const SocialCard = (props: ISocialCard) => {
   const { icon, iconTitle, interactions, todayStatistic, isFollowers } = props;
 
-  const isFollowersCheck = isFollowers ?? true;
-  const followersText = isFollowersCheck ? 'FOLLOWERS' : 'SUBSCRIBERS';
+  const followersText = isFollowers ? 'FOLLOWERS' : 'SUBSCRIBERS';
 
   return (
-    <div>
+    <>
       <div>
         {iconTitle}
         <img src={icon} />
       </div>
-      <div>{interactions?.toString()}</div>
+      <div>{interactions.toString()}</div>
       <div>{followersText}</div>
-      <div>{`${todayStatistic?.toString()} Today`}</div>
-    </div>
+      <div>{`${todayStatistic.toString()} Today`}</div>
+    </>
   );
 };
 
 export default SocialCard;
 
 export interface ISocialCard {
+  id: string;
   iconTitle: string;
   icon: any;
   interactions: number;
-  isFollowers: boolean;
   todayStatistic: number;
+  isFollowers?: boolean;
 }
