@@ -8,17 +8,8 @@ import React from 'react';
 //  - add increment or decrement sign to today's number
 //  - add style top line
 
-interface ISocialCard {
-  iconText: string;
-  iconSrc?: any;
-  followersNumber: number;
-  isFollowers?: boolean;
-  todayNumber: number;
-}
-
 const SocialCard = (props: ISocialCard) => {
-  const { iconSrc, iconText, followersNumber, todayNumber, isFollowers } =
-    props;
+  const { icon, iconTitle, interactions, todayStatistic, isFollowers } = props;
 
   const isFollowersCheck = isFollowers ?? true;
   const followersText = isFollowersCheck ? 'FOLLOWERS' : 'SUBSCRIBERS';
@@ -26,14 +17,22 @@ const SocialCard = (props: ISocialCard) => {
   return (
     <div>
       <div>
-        {iconText}
-        <img src={iconSrc} />
+        {iconTitle}
+        <img src={icon} />
       </div>
-      <div>{followersNumber?.toString()}</div>
+      <div>{interactions?.toString()}</div>
       <div>{followersText}</div>
-      <div>{`${todayNumber?.toString()} Today`}</div>
+      <div>{`${todayStatistic?.toString()} Today`}</div>
     </div>
   );
 };
 
 export default SocialCard;
+
+export interface ISocialCard {
+  iconTitle: string;
+  icon: any;
+  interactions: number;
+  isFollowers: boolean;
+  todayStatistic: number;
+}

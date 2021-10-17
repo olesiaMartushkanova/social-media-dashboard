@@ -17,6 +17,7 @@ import MyImage from './images/icon-facebook.svg';
 // 2. Install React-Redux
 // 3. Set up Redux store
 // 4. Set up reducer for switching dark/light mode
+// const SOCIAL_CARDS:
 
 const App = () => {
   return (
@@ -28,15 +29,22 @@ const App = () => {
 
       <div>
         <SocialCard
-          iconText='@nathanf'
-          followersNumber={1987}
-          todayNumber={12}
-          iconSrc={MyImage}
+          iconTitle='@nathanf'
+          interactions={1987}
+          todayStatistic={12}
+          icon={MyImage}
+          isFollowers={true}
         />
       </div>
 
       <div>Overview - Today</div>
-      <TodayCard />
+      <TodayCard
+        title='Page Views'
+        icon={MyImage}
+        interactions={87}
+        percentage={3}
+        isIncreased={true}
+      />
     </div>
   );
 };
