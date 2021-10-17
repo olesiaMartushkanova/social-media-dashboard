@@ -84,6 +84,7 @@ const App = () => {
         ))}
       </div>
 
+      {/* 
       <div style={styleCardsGeneral}>
         {TODAY_CARDS_BOTTOM.map((card) => (
           <li key={card.id}>
@@ -97,7 +98,7 @@ const App = () => {
             />
           </li>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

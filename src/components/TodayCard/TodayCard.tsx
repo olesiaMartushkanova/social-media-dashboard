@@ -15,11 +15,15 @@ const TodayCard = (props: ITodayCard) => {
     convertNumberToShortThousands(interactions).toString();
 
   return (
-    <div>
-      <div>{title}</div>
-      <img src={icon} />
-      <div>{socialInteractions}</div>
-      <div>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <div>{title}</div>
+        <img src={icon} />
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <div>{socialInteractions}</div>
+
         <div>{isIncreased}</div>
         <div>{`${percentage.toString()}%`}</div>
       </div>
