@@ -33,9 +33,8 @@ export const TODAY_CARDS_TOP: Array<ITodayCard> = [
     id: 'instagram-views-todayCard-top',
     title: 'Profile Views',
     icon: IconInstagram,
-    // TODO: add 'K' here
-    interactions: 5462,
-    percentage: 2257,
+    interactions: 52000,
+    percentage: 1375,
     isIncreased: true,
   },
 ];

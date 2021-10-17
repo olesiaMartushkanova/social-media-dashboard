@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react';
 import SocialCard, { ISocialCard } from './components/SocialCard/SocialCard';
 import TodayCard from './components/TodayCard/TodayCard';
 import { SOCIAL_CARDS } from './data/socialCards';
+import { TODAY_CARDS_BOTTOM, TODAY_CARDS_TOP } from './data/todayCards';
 
 // Main App component
 // App component includes all Social Dashboard components
@@ -22,7 +23,11 @@ import { SOCIAL_CARDS } from './data/socialCards';
 
 const App = () => {
   return (
-    <div style={styleApp}>
+    <div
+      style={{
+        ...styleAppGeneral,
+        ...styleAppDesktop,
+      }}>
       <div>
         <div style={{ fontWeight: 700, fontSize: '28px', marginBottom: '3px' }}>
           Social Media Dashboard
@@ -38,7 +43,7 @@ const App = () => {
         </div>
       </div>
 
-      <div style={styleSocialCards}>
+      <div style={styleCardsGeneral}>
         {SOCIAL_CARDS.map((card) => (
           <li key={card.id}>
             <SocialCard
@@ -63,13 +68,36 @@ const App = () => {
         }}>
         Overview - Today
       </div>
-      {/* <TodayCard
-        title='Page Views'
-        icon={IconFacebook}
-        interactions={87}
-        percentage={3}
-        isIncreased={true}
-      /> */}
+
+      <div style={{ ...styleCardsGeneral, ...styleTodaysCardsTop }}>
+        {TODAY_CARDS_TOP.map((card) => (
+          <li key={card.id}>
+            <TodayCard
+              id={card.id}
+              title={card.title}
+              icon={card.icon}
+              interactions={card.interactions}
+              percentage={card.percentage}
+              isIncreased={card.isIncreased}
+            />
+          </li>
+        ))}
+      </div>
+
+      <div style={styleCardsGeneral}>
+        {TODAY_CARDS_BOTTOM.map((card) => (
+          <li key={card.id}>
+            <TodayCard
+              id={card.id}
+              title={card.title}
+              icon={card.icon}
+              interactions={card.interactions}
+              percentage={card.percentage}
+              isIncreased={card.isIncreased}
+            />
+          </li>
+        ))}
+      </div>
     </div>
   );
 };
@@ -88,14 +116,13 @@ const styleAppDesktop: CSSProperties = {
   marginBottom: '20px',
 };
 
-const styleApp = {
-  ...styleAppGeneral,
-  ...styleAppDesktop,
-};
-
-const styleSocialCards: CSSProperties = {
+const styleCardsGeneral: CSSProperties = {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-evenly',
   listStyleType: 'none',
+};
+
+const styleTodaysCardsTop: CSSProperties = {
+  marginBottom: '15px',
 };

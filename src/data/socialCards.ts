@@ -24,8 +24,7 @@ export const SOCIAL_CARDS: Array<ISocialCard> = [
   {
     id: 'instagram-social-card',
     iconTitle: '@realnathanf',
-    // TODO: add 'K' to interactions here
-    interactions: 11,
+    interactions: 11000,
     todayStatistic: 99,
     icon: IconInstagram,
     isFollowers: true,

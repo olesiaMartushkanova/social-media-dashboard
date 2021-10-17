@@ -1,4 +1,5 @@
 import React from 'react';
+import { convertNumberToShortThousands } from '../../utils/convertNumber';
 
 // TodayCard includes all the basic styles for light mode
 // TodayCard includes all the basic styles for dark mode
@@ -10,11 +11,14 @@ import React from 'react';
 const TodayCard = (props: ITodayCard) => {
   const { title, interactions, icon, percentage, isIncreased } = props;
 
+  const socialInteractions =
+    convertNumberToShortThousands(interactions).toString();
+
   return (
     <div>
       <div>{title}</div>
       <img src={icon} />
-      <div>{interactions}</div>
+      <div>{socialInteractions}</div>
       <div>
         <div>{isIncreased}</div>
         <div>{`${percentage.toString()}%`}</div>
