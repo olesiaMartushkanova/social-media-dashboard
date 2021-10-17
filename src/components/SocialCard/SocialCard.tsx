@@ -16,9 +16,9 @@ const SocialCard = (props: ISocialCard) => {
 
   return (
     <>
-      <div>
-        {iconTitle}
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
         <img src={icon} />
+        <div>{iconTitle}</div>
       </div>
       <div>{interactions.toString()}</div>
       <div>{followersText}</div>

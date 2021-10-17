@@ -1,10 +1,7 @@
 import React, { CSSProperties } from 'react';
 import SocialCard, { ISocialCard } from './components/SocialCard/SocialCard';
 import TodayCard from './components/TodayCard/TodayCard';
-import IconFacebook from './images/icon-facebook.svg';
-import IconTwitter from './images/icon-twitter.svg';
-import IconInstagram from './images/icon-instagram.svg';
-import IconYoutube from './images/icon-youtube.svg';
+import { SOCIAL_CARDS } from './data/socialCards';
 
 // Main App component
 // App component includes all Social Dashboard components
@@ -21,49 +18,24 @@ import IconYoutube from './images/icon-youtube.svg';
 // 4. Set up reducer for switching dark/light mode
 
 // 5. Add styles here
-
-const SOCIAL_CARDS: Array<ISocialCard> = [
-  {
-    id: 'facebook-social-card',
-    iconTitle: '@nathanf',
-    interactions: 1987,
-    todayStatistic: 12,
-    icon: IconFacebook,
-    isFollowers: true,
-  },
-  {
-    id: 'twitter-social-card',
-    iconTitle: '@nathanf',
-    interactions: 1044,
-    todayStatistic: 99,
-    icon: IconTwitter,
-    isFollowers: true,
-  },
-  {
-    id: 'instagram-social-card',
-    iconTitle: '@realnathanf',
-    // TODO: add 'K' to interactions here
-    interactions: 11,
-    todayStatistic: 99,
-    icon: IconInstagram,
-    isFollowers: true,
-  },
-  {
-    id: 'youtube-social-card',
-    iconTitle: 'Nathan F.',
-    interactions: 8239,
-    todayStatistic: 144,
-    icon: IconYoutube,
-    isFollowers: false,
-  },
-];
+// 6. Organize styles better
 
 const App = () => {
   return (
-    <div>
+    <div style={styleApp}>
       <div>
-        <div>Social Media Dashboard</div>
-        <div>Total Followers: 23,004</div>
+        <div style={{ fontWeight: 700, fontSize: '28px', marginBottom: '3px' }}>
+          Social Media Dashboard
+        </div>
+        <div
+          style={{
+            fontWeight: 700,
+            fontSize: '14px',
+            opacity: '65%',
+            marginBottom: '10px',
+          }}>
+          Total Followers: 23,004
+        </div>
       </div>
 
       <div style={styleSocialCards}>
@@ -81,7 +53,16 @@ const App = () => {
         ))}
       </div>
 
-      <div>Overview - Today</div>
+      <div
+        style={{
+          fontWeight: 700,
+          fontSize: '20px',
+          opacity: '60%',
+          marginBottom: '10px',
+          marginTop: '10px',
+        }}>
+        Overview - Today
+      </div>
       {/* <TodayCard
         title='Page Views'
         icon={IconFacebook}
@@ -94,6 +75,23 @@ const App = () => {
 };
 
 export default App;
+
+const styleAppGeneral: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  fontFamily: 'Inter, sans-serif',
+};
+
+const styleAppDesktop: CSSProperties = {
+  marginLeft: '70px',
+  marginTop: '40px',
+  marginBottom: '20px',
+};
+
+const styleApp = {
+  ...styleAppGeneral,
+  ...styleAppDesktop,
+};
 
 const styleSocialCards: CSSProperties = {
   display: 'flex',

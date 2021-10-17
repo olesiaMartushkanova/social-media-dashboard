@@ -4,6 +4,9 @@ import React from 'react';
 // TodayCard includes all the basic styles for dark mode
 // TodayCard is reusable component
 
+// TODO:
+// - add the ability to add 'K' to interactions number
+
 const TodayCard = (props: ITodayCard) => {
   const { title, interactions, icon, percentage, isIncreased } = props;
 
@@ -22,7 +25,8 @@ const TodayCard = (props: ITodayCard) => {
 
 export default TodayCard;
 
-interface ITodayCard {
+export interface ITodayCard {
+  id: string;
   title: TodayCardTitleType;
   icon: any;
   interactions: number;
