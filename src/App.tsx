@@ -52,7 +52,9 @@ const App = () => {
               interactions={card.interactions}
               todayStatistic={card.todayStatistic}
               icon={card.icon}
+              topLineColor={card.topLineColor}
               isFollowers={card.isFollowers}
+              isIncreasedActivity={card.isIncreasedActivity}
             />
           </li>
         ))}

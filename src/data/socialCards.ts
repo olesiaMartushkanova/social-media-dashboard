@@ -12,6 +12,8 @@ export const SOCIAL_CARDS: Array<ISocialCard> = [
     todayStatistic: 12,
     icon: IconFacebook,
     isFollowers: true,
+    topLineColor: 'hsl(208, 92%, 53%)',
+    isIncreasedActivity: true,
   },
   {
     id: 'twitter-social-card',
@@ -20,6 +22,8 @@ export const SOCIAL_CARDS: Array<ISocialCard> = [
     todayStatistic: 99,
     icon: IconTwitter,
     isFollowers: true,
+    topLineColor: 'hsl(203, 89%, 53%)',
+    isIncreasedActivity: true,
   },
   {
     id: 'instagram-social-card',
@@ -28,6 +32,9 @@ export const SOCIAL_CARDS: Array<ISocialCard> = [
     todayStatistic: 99,
     icon: IconInstagram,
     isFollowers: true,
+    topLineColor:
+      'linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%))',
+    isIncreasedActivity: true,
   },
   {
     id: 'youtube-social-card',
@@ -36,5 +43,7 @@ export const SOCIAL_CARDS: Array<ISocialCard> = [
     todayStatistic: 144,
     icon: IconYoutube,
     isFollowers: false,
+    topLineColor: 'hsl(348, 97%, 39%)',
+    isIncreasedActivity: false,
   },
 ];
