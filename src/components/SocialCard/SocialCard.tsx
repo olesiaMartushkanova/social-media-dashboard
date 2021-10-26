@@ -22,8 +22,7 @@ const SocialCard = (props: ISocialCard) => {
   } = props;
 
   const followersText = isFollowers ? 'FOLLOWERS' : 'SUBSCRIBERS';
-  const socialInteractions =
-    convertNumberToShortThousands(interactions).toString();
+  const socialInteractions = convertNumberToShortThousands(interactions).toString();
 
   const activityTextColor = isIncreasedActivity
     ? 'hsl(163, 72%, 41%)'
@@ -31,7 +30,7 @@ const SocialCard = (props: ISocialCard) => {
 
   return (
     <>
-      <div style={{ height: '4px', background: topLineColor }}></div>
+      <div style={{ height: '4px', background: topLineColor }} />
       <div style={styles.cardBaseStyle}>
         <div style={styleCard}>
           <img src={icon} style={{ marginRight: '3px' }} />
@@ -49,7 +48,8 @@ const SocialCard = (props: ISocialCard) => {
             opacity: '40%',
             letterSpacing: '5px',
             marginBottom: '20px',
-          }}>
+          }}
+        >
           {followersText}
         </div>
         <div
@@ -57,7 +57,10 @@ const SocialCard = (props: ISocialCard) => {
             fontWeight: 700,
             fontSize: '12px',
             color: activityTextColor,
-          }}>{`${todayStatistic.toString()} Today`}</div>
+          }}
+        >
+          {`${todayStatistic.toString()} Today`}
+        </div>
       </div>
     </>
   );
