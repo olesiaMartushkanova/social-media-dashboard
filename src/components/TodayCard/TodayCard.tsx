@@ -10,11 +10,10 @@ import { styles } from '../styles';
 // - finish styling
 
 const TodayCard = (props: ITodayCard) => {
-  const {
-    title, interactions, icon, percentage, isIncreased,
-  } = props;
+  const { title, interactions, icon, percentage, isIncreased } = props;
 
-  const socialInteractions = convertNumberToShortThousands(interactions).toString();
+  const socialInteractions =
+    convertNumberToShortThousands(interactions).toString();
 
   return (
     <div
@@ -25,7 +24,15 @@ const TodayCard = (props: ITodayCard) => {
       }}
     >
       <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <div style={{ marginRight: '25px' }}>{title}</div>
+        <div
+          style={{
+            ...styles.textStyle.boldText,
+            ...styles.textStyle.cardTitleText,
+            marginRight: '25px',
+          }}
+        >
+          {title}
+        </div>
         <img src={icon} />
       </div>
 
