@@ -8,9 +8,11 @@
     "build": "NODE_ENV=production webpack",
     "lint": "eslint -c .eslintrc.json --ignore-path .eslintignore --max-warnings 0 --fix  \"*/**/*.{ts,tsx}\""
   },
-  "pre-commit": [
-    "lint"
-  ],
+  "pre-commit": {
+    "run": [
+      "lint"
+    ]
+  },
   "author": "Olesia",
   "license": "ISC",
   "dependencies": {
