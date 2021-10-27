@@ -23,7 +23,13 @@ const TodayCard = (props: ITodayCard) => {
         flexDirection: 'column',
       }}
     >
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+        }}
+      >
         <div
           style={{
             ...styles.textStyle.boldText,
@@ -37,10 +43,20 @@ const TodayCard = (props: ITodayCard) => {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'row', marginTop: '15px' }}>
-        <div style={{ marginRight: '25px' }}>{socialInteractions}</div>
+        <div
+          style={{
+            ...styles.textStyle.boldText,
+            fontSize: '28px',
+            marginRight: '25px',
+          }}
+        >
+          {socialInteractions}
+        </div>
 
         <div>{isIncreased}</div>
-        <div>{`${percentage.toString()}%`}</div>
+        <div
+          style={{ marginBottom: '1px', marginRight: '1px' }}
+        >{`${percentage.toString()}%`}</div>
       </div>
     </div>
   );

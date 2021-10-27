@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react';
 import SocialCard from './components/SocialCard/SocialCard';
+import { styles } from './components/styles';
 import TodayCard from './components/TodayCard/TodayCard';
 import { SOCIAL_CARDS } from './data/socialCards';
 import { TODAY_CARDS_TOP } from './data/todayCards';
@@ -29,12 +30,18 @@ const App = () => (
     }}
   >
     <div>
-      <div style={{ fontWeight: 700, fontSize: '28px', marginBottom: '3px' }}>
+      <div
+        style={{
+          ...styles.textStyle.boldText,
+          fontSize: '28px',
+          marginBottom: '3px',
+        }}
+      >
         Social Media Dashboard
       </div>
       <div
         style={{
-          fontWeight: 700,
+          ...styles.textStyle.boldText,
           fontSize: '14px',
           opacity: '65%',
           marginBottom: '10px',
@@ -63,7 +70,7 @@ const App = () => (
 
     <div
       style={{
-        fontWeight: 700,
+        ...styles.textStyle.boldText,
         fontSize: '20px',
         opacity: '60%',
         marginBottom: '10px',

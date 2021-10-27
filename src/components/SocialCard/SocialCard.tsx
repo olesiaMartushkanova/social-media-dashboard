@@ -38,7 +38,7 @@ const SocialCard = (props: ISocialCard) => {
       <div style={{ height: '4px', background: topLineColor }} />
       <div style={{ ...styles.cardBaseStyle, textAlign: 'center' }}>
         <div style={styleCard}>
-          <img src={icon} style={{ marginRight: '3px' }} />
+          <img src={icon} style={{ marginRight: '1px', marginTop: '1px' }} />
           <div
             style={{
               ...styles.textStyle.boldText,
@@ -48,7 +48,7 @@ const SocialCard = (props: ISocialCard) => {
             {iconTitle}
           </div>
         </div>
-        <div style={{ fontWeight: 700, fontSize: '45px' }}>
+        <div style={{ ...styles.textStyle.boldText, fontSize: '45px' }}>
           {socialInteractions}
         </div>
         <div style={styleFollowersText}>{followersText}</div>
@@ -82,12 +82,11 @@ export default SocialCard;
 const styleCard: CSSProperties = {
   display: 'flex',
   flexDirection: 'row',
-  marginBottom: '10px',
   justifyContent: 'center',
 };
 
 const styleFollowersText: CSSProperties = {
-  fontWeight: 700,
+  ...styles.textStyle.boldText,
   fontSize: '14px',
   opacity: '40%',
   letterSpacing: '5px',
