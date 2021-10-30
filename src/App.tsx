@@ -30,8 +30,12 @@ const App = () => (
       ...styleAppDesktop,
     }}
   >
-    <SwitchToggle />
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+      }}
+    >
       <div
         style={{
           ...styles.textStyle.boldText,
@@ -41,16 +45,20 @@ const App = () => (
       >
         Social Media Dashboard
       </div>
-      <div
-        style={{
-          ...styles.textStyle.boldText,
-          fontSize: '14px',
-          opacity: '65%',
-          marginBottom: '40px',
-        }}
-      >
-        Total Followers: 23,004
+      <div style={{ marginLeft: 'auto', marginRight: '70px' }}>
+        <SwitchToggle />
       </div>
+    </div>
+
+    <div
+      style={{
+        ...styles.textStyle.boldText,
+        fontSize: '14px',
+        opacity: '65%',
+        marginBottom: '40px',
+      }}
+    >
+      Total Followers: 23,004
     </div>
 
     <div style={styleCardsGeneral}>
