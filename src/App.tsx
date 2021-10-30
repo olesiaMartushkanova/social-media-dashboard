@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import SocialCard from './components/SocialCard/SocialCard';
 import { styles } from './components/styles';
+import SwitchToggle from './components/SwitchToggle/SwitchToggle';
 import TodayCard from './components/TodayCard/TodayCard';
 import { SOCIAL_CARDS } from './data/socialCards';
 import { TODAY_CARDS_BOTTOM, TODAY_CARDS_TOP } from './data/todayCards';
@@ -29,6 +30,7 @@ const App = () => (
       ...styleAppDesktop,
     }}
   >
+    <SwitchToggle />
     <div>
       <div
         style={{
