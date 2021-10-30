@@ -1,4 +1,5 @@
 import React from 'react';
+import { styles } from '../styles';
 import './SwitchToggle.css';
 
 // Toggle switch
@@ -10,12 +11,21 @@ import './SwitchToggle.css';
 const SwitchToggle = () => {
   return (
     <div>
+      <label
+        style={{
+          ...styles.textStyle.cardTitleText,
+          ...styles.textStyle.boldText,
+          marginRight: '5px',
+        }}
+      >
+        Dark Mode
+      </label>
       <label className="switch">
         <input
           className="checkbox"
           type="checkbox"
-          //   checked={isToggled}
-          //   onChange={onToggled}
+          // checked={isToggled}
+          // onChange={onToggled}
         />
         <span className="slider"></span>
       </label>
