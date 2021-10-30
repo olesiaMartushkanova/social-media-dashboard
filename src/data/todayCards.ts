@@ -11,7 +11,7 @@ export const TODAY_CARDS_TOP: Array<ITodayCard> = [
     icon: IconFacebook,
     interactions: 87,
     percentage: 3,
-    isIncreased: true,
+    isIncreasedActivity: true,
   },
   {
     id: 'facebook-likes-todayCard-top',
@@ -19,7 +19,7 @@ export const TODAY_CARDS_TOP: Array<ITodayCard> = [
     icon: IconFacebook,
     interactions: 52,
     percentage: 2,
-    isIncreased: false,
+    isIncreasedActivity: false,
   },
   {
     id: 'instagram-likes-todayCard-top',
@@ -27,7 +27,7 @@ export const TODAY_CARDS_TOP: Array<ITodayCard> = [
     icon: IconInstagram,
     interactions: 5462,
     percentage: 2257,
-    isIncreased: true,
+    isIncreasedActivity: true,
   },
   {
     id: 'instagram-views-todayCard-top',
@@ -35,7 +35,7 @@ export const TODAY_CARDS_TOP: Array<ITodayCard> = [
     icon: IconInstagram,
     interactions: 52000,
     percentage: 1375,
-    isIncreased: true,
+    isIncreasedActivity: true,
   },
 ];
 
@@ -46,7 +46,7 @@ export const TODAY_CARDS_BOTTOM: Array<ITodayCard> = [
     icon: IconTwitter,
     interactions: 117,
     percentage: 303,
-    isIncreased: true,
+    isIncreasedActivity: true,
   },
   {
     id: 'twitter-likes-todayCard-bottom',
@@ -54,7 +54,7 @@ export const TODAY_CARDS_BOTTOM: Array<ITodayCard> = [
     icon: IconTwitter,
     interactions: 507,
     percentage: 553,
-    isIncreased: true,
+    isIncreasedActivity: true,
   },
   {
     id: 'youtube-likes-todayCard-bottom',
@@ -62,7 +62,7 @@ export const TODAY_CARDS_BOTTOM: Array<ITodayCard> = [
     icon: IconYoutube,
     interactions: 107,
     percentage: 19,
-    isIncreased: false,
+    isIncreasedActivity: false,
   },
   {
     id: 'youtube-views-todayCard-bottom',
@@ -70,6 +70,6 @@ export const TODAY_CARDS_BOTTOM: Array<ITodayCard> = [
     icon: IconYoutube,
     interactions: 1407,
     percentage: 12,
-    isIncreased: false,
+    isIncreasedActivity: false,
   },
 ];

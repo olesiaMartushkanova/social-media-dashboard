@@ -36,9 +36,16 @@ const SocialCard = (props: ISocialCard) => {
   return (
     <>
       <div style={{ height: '4px', background: topLineColor }} />
-      <div style={{ ...styles.cardBaseStyle, textAlign: 'center' }}>
+      <div
+        style={{
+          ...styles.cardBaseStyle,
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         <div style={styleCard}>
-          <img src={icon} style={{ marginRight: '1px', marginTop: '1px' }} />
+          <img src={icon} style={{ marginRight: '4px' }} />
           <div
             style={{
               ...styles.textStyle.boldText,
@@ -60,7 +67,12 @@ const SocialCard = (props: ISocialCard) => {
             justifyContent: 'center',
           }}
         >
-          <img src={activityIcon} style={{ marginRight: '4px' }} />
+          <div>
+            <img
+              src={activityIcon}
+              style={{ marginRight: '4px', marginBottom: '5px' }}
+            />
+          </div>
 
           <div
             style={{

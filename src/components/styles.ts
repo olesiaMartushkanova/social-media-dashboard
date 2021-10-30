@@ -2,8 +2,10 @@ import { CSSProperties } from 'react';
 
 const cardBaseStyle: CSSProperties = {
   backgroundColor: 'hsl(227, 47%, 96%)',
-  boxSizing: 'content-box',
-  padding: '45px',
+  width: '250px',
+  maxWidth: '250px',
+  display: 'inline-flex',
+  padding: '30px',
 };
 
 const textStyle: ITextStyle = {
