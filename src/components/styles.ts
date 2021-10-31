@@ -17,13 +17,16 @@ const textStyle: ITextStyle = {
   },
   cardTitleText: {
     fontSize: '12px',
-    opacity: '65%',
+    opacity: '85%',
   },
 };
 
 const primaryColors = {
   limeGreen: 'hsl(163, 72%, 41%)',
   brightRed: 'hsl(356, 69%, 56%)',
+  white: 'hsl(0, 0%, 100%)',
+  veryDarkBlue: 'hsl(230, 17%, 14%)',
+  darkGreyish: 'hsl(228, 12%, 44%)',
 };
 
 export const styles = {

@@ -1,14 +1,21 @@
 import React from 'react';
+import { Theme, useTheme } from '../../context/ThemeContext';
 import { styles } from '../styles';
 import './SwitchToggle.css';
 
-// Toggle switch
-
-// TODO:
-// - Add styles
-// - Add feature to trigger change of the mode
-
 const SwitchToggle = () => {
+  const { theme, setTheme } = useTheme();
+
+  const onToggled = () => {
+    setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
+  };
+
+  const text = theme === Theme.Light ? 'Dark Mode' : 'Light Mode';
+  const textColor =
+    theme === Theme.Dark
+      ? styles.primaryColors.white
+      : styles.primaryColors.darkGreyish;
+
   return (
     <div>
       <label
@@ -16,27 +23,17 @@ const SwitchToggle = () => {
           ...styles.textStyle.cardTitleText,
           ...styles.textStyle.boldText,
           marginRight: '5px',
+          color: textColor,
         }}
       >
-        Dark Mode
+        {text}
       </label>
       <label className="switch">
-        <input
-          className="checkbox"
-          type="checkbox"
-          // checked={isToggled}
-          // onChange={onToggled}
-        />
+        <input className="checkbox" type="checkbox" onChange={onToggled} />
         <span className="slider"></span>
       </label>
     </div>
   );
 };
-
-// interface ISwitchToggle {
-//   isRounded?: boolean;
-//   isToggled?: boolean;
-//   onToggled?: any;
-// }
 
 export default SwitchToggle;
