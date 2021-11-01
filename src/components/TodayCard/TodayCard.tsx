@@ -10,7 +10,7 @@ const TodayCard = (props: ITodayCard) => {
 
   const { theme } = useTheme();
 
-  const colors =
+  const todayCardThemeStyles =
     theme === Theme.Dark
       ? styles.darkThemeCardStyles
       : styles.lightThemeCardStyles;
@@ -28,8 +28,8 @@ const TodayCard = (props: ITodayCard) => {
     <div
       style={{
         ...styles.cardBaseStyle,
-        backgroundColor: colors.topCardBackground,
-        color: colors.textColor,
+        backgroundColor: todayCardThemeStyles.topCardBackground,
+        color: todayCardThemeStyles.textColor,
         display: 'flex',
       }}
     >

@@ -5,6 +5,17 @@ import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { Theme, useTheme } from '../../context/ThemeContext';
 
+export interface ISocialCard {
+  id: string;
+  iconTitle: string;
+  icon: any;
+  interactions: number;
+  todayStatistic: number;
+  topLineColor: string;
+  isIncreasedActivity: boolean;
+  isFollowers?: boolean;
+}
+
 const SocialCard = (props: ISocialCard) => {
   const {
     icon,
@@ -18,7 +29,7 @@ const SocialCard = (props: ISocialCard) => {
 
   const { theme } = useTheme();
 
-  const colors =
+  const socialCardThemeStyles =
     theme === Theme.Dark
       ? styles.darkThemeCardStyles
       : styles.lightThemeCardStyles;
@@ -39,11 +50,11 @@ const SocialCard = (props: ISocialCard) => {
       <div
         style={{
           ...styles.cardBaseStyle,
-          backgroundColor: colors.topCardBackground,
+          backgroundColor: socialCardThemeStyles.topCardBackground,
           textAlign: 'center',
           display: 'flex',
           flexDirection: 'column',
-          color: colors.textColor,
+          color: socialCardThemeStyles.textColor,
         }}
       >
         <div style={styleCard}>
@@ -106,14 +117,3 @@ const styleFollowersText: CSSProperties = {
   letterSpacing: '5px',
   marginBottom: '20px',
 };
-
-export interface ISocialCard {
-  id: string;
-  iconTitle: string;
-  icon: any;
-  interactions: number;
-  todayStatistic: number;
-  topLineColor: string;
-  isIncreasedActivity: boolean;
-  isFollowers?: boolean;
-}

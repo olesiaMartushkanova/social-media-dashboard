@@ -10,11 +10,7 @@ const SwitchToggle = () => {
     setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
   };
 
-  const text = theme === Theme.Light ? 'Dark Mode' : 'Light Mode';
-  const textColor =
-    theme === Theme.Dark
-      ? styles.primaryColors.white
-      : styles.primaryColors.darkGreyishBlueText;
+  const switchToggleThemeStyles = theme === Theme.Dark ? darkTheme : lightTheme;
 
   return (
     <div>
@@ -23,10 +19,10 @@ const SwitchToggle = () => {
           ...styles.textStyle.cardTitleText,
           ...styles.textStyle.boldText,
           marginRight: '5px',
-          color: textColor,
+          color: switchToggleThemeStyles.textColor,
         }}
       >
-        {text}
+        {switchToggleThemeStyles.text}
       </label>
       <label className="switch">
         <input className="checkbox" type="checkbox" onChange={onToggled} />
@@ -34,6 +30,16 @@ const SwitchToggle = () => {
       </label>
     </div>
   );
+};
+
+const darkTheme = {
+  text: 'Dark Mode',
+  textColor: styles.primaryColors.white,
+};
+
+const lightTheme = {
+  text: 'Light Mode',
+  textColor: styles.primaryColors.darkGreyishBlueText,
 };
 
 export default SwitchToggle;

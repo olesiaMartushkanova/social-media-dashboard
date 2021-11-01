@@ -28,14 +28,14 @@ import { TODAY_CARDS_BOTTOM, TODAY_CARDS_TOP } from './data/todayCards';
 const App = () => {
   const [theme, setTheme] = React.useState(Theme.Light);
 
-  const colors = theme === Theme.Dark ? darkModeAppStyle : lightModeAppStyle;
+  const appThemeStyles = theme === Theme.Dark ? darkTheme : lightTheme;
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div
         style={{
           ...styleAppGeneral,
-          backgroundColor: colors.backgroundColor,
+          backgroundColor: appThemeStyles.backgroundColor,
         }}
       >
         <div
@@ -52,7 +52,7 @@ const App = () => {
             <div
               style={{
                 ...styles.textStyle.boldText,
-                color: colors.titleColor,
+                color: appThemeStyles.titleColor,
                 fontSize: '28px',
                 marginBottom: '3px',
               }}
@@ -70,7 +70,7 @@ const App = () => {
               fontSize: '14px',
               opacity: '85%',
               marginBottom: '40px',
-              color: colors.subTitleColor,
+              color: appThemeStyles.subTitleColor,
             }}
           >
             Total Followers: 23,004
@@ -100,7 +100,7 @@ const App = () => {
               opacity: '85%',
               marginBottom: '40px',
               marginTop: '30px',
-              color: colors.subTitleColor,
+              color: appThemeStyles.subTitleColor,
             }}
           >
             Overview - Today
@@ -136,7 +136,7 @@ const App = () => {
             ))}
           </div>
         </div>
-        <Footer color={colors.titleColor} />
+        <Footer color={appThemeStyles.titleColor} />
       </div>
     </ThemeContext.Provider>
   );
@@ -144,13 +144,13 @@ const App = () => {
 
 export default App;
 
-const darkModeAppStyle = {
+const darkTheme = {
   backgroundColor: 'hsl(230, 17%, 14%)',
   subTitleColor: styles.primaryColors.white,
   titleColor: styles.primaryColors.white,
 };
 
-const lightModeAppStyle = {
+const lightTheme = {
   backgroundColor: ' hsl(0, 0%, 100%)',
   subTitleColor: styles.primaryColors.darkGreyishBlueText,
   titleColor: styles.primaryColors.darkPageBG,

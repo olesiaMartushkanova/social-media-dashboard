@@ -1,5 +1,9 @@
 import React from 'react';
 
+interface IFooter {
+  color?: string;
+}
+
 const Footer = ({ color }: IFooter) => {
   const mainTextWithSpace = `Challenge by `;
   return (
@@ -19,7 +23,3 @@ const Footer = ({ color }: IFooter) => {
 };
 
 export default Footer;
-
-interface IFooter {
-  color?: string;
-}

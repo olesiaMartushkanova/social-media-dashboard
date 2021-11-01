@@ -29,12 +29,12 @@ const primaryColors = {
   darkGreyishBlueText: 'hsl(228, 12%, 44%)',
 };
 
-const lightThemeCardStyles: ICardThemeColors = {
+const lightThemeCardStyles = {
   topCardBackground: 'hsl(227, 47%, 96%)',
   textColor: 'hsl(232, 19%, 15%)',
 };
 
-const darkThemeCardStyles: ICardThemeColors = {
+const darkThemeCardStyles = {
   topCardBackground: 'hsl(228, 28%, 20%)',
   textColor: primaryColors.white,
 };
@@ -46,11 +46,6 @@ export const styles = {
   lightThemeCardStyles,
   darkThemeCardStyles,
 };
-
-export interface ICardThemeColors {
-  topCardBackground: string;
-  textColor: string;
-}
 
 interface ITextStyle {
   boldText: CSSProperties;
