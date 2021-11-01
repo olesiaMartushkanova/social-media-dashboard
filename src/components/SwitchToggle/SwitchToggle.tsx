@@ -14,7 +14,7 @@ const SwitchToggle = () => {
   const textColor =
     theme === Theme.Dark
       ? styles.primaryColors.white
-      : styles.primaryColors.darkGreyish;
+      : styles.primaryColors.darkGreyishBlueText;
 
   return (
     <div>

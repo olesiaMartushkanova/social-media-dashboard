@@ -3,14 +3,7 @@ import { convertNumberToShortThousands } from '../../utils/convertNumber';
 import { styles } from '../styles';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
-
-// SocialCard includes all the basic styles for light mode
-// SocialCard includes all the basic styles for dark mode
-// SocialCard is reusable component
-
-// TODO:
-//  - Fix: arrow in today
-// - finish styling
+import { Theme, useTheme } from '../../context/ThemeContext';
 
 const SocialCard = (props: ISocialCard) => {
   const {
@@ -22,6 +15,13 @@ const SocialCard = (props: ISocialCard) => {
     topLineColor,
     isIncreasedActivity,
   } = props;
+
+  const { theme } = useTheme();
+
+  const colors =
+    theme === Theme.Dark
+      ? styles.darkThemeCardStyles
+      : styles.lightThemeCardStyles;
 
   const followersText = isFollowers ? 'FOLLOWERS' : 'SUBSCRIBERS';
   const socialInteractions =
@@ -39,9 +39,11 @@ const SocialCard = (props: ISocialCard) => {
       <div
         style={{
           ...styles.cardBaseStyle,
+          backgroundColor: colors.topCardBackground,
           textAlign: 'center',
           display: 'flex',
           flexDirection: 'column',
+          color: colors.textColor,
         }}
       >
         <div style={styleCard}>

@@ -3,16 +3,17 @@ import { convertNumberToShortThousands } from '../../utils/convertNumber';
 import { styles } from '../styles';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
-
-// TodayCard includes all the basic styles for light mode
-// TodayCard includes all the basic styles for dark mode
-// TodayCard is reusable component
-
-// TODO:
-// - finish styling
+import { useTheme, Theme } from '../../context/ThemeContext';
 
 const TodayCard = (props: ITodayCard) => {
   const { title, interactions, icon, percentage, isIncreasedActivity } = props;
+
+  const { theme } = useTheme();
+
+  const colors =
+    theme === Theme.Dark
+      ? styles.darkThemeCardStyles
+      : styles.lightThemeCardStyles;
 
   const socialInteractions =
     convertNumberToShortThousands(interactions).toString();
@@ -27,6 +28,8 @@ const TodayCard = (props: ITodayCard) => {
     <div
       style={{
         ...styles.cardBaseStyle,
+        backgroundColor: colors.topCardBackground,
+        color: colors.textColor,
         display: 'flex',
       }}
     >

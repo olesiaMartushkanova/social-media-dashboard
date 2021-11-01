@@ -1,7 +1,6 @@
 import { CSSProperties } from 'react';
 
 const cardBaseStyle: CSSProperties = {
-  backgroundColor: 'hsl(227, 47%, 96%)',
   width: '250px',
   maxWidth: '250px',
   display: 'inline-flex',
@@ -25,15 +24,33 @@ const primaryColors = {
   limeGreen: 'hsl(163, 72%, 41%)',
   brightRed: 'hsl(356, 69%, 56%)',
   white: 'hsl(0, 0%, 100%)',
-  veryDarkBlue: 'hsl(230, 17%, 14%)',
-  darkGreyish: 'hsl(228, 12%, 44%)',
+  darkPageBG: 'hsl(230, 17%, 14%)',
+  darkCardOnHoverBG: 'hsl(228, 28%, 20%)',
+  darkGreyishBlueText: 'hsl(228, 12%, 44%)',
+};
+
+const lightThemeCardStyles: ICardThemeColors = {
+  topCardBackground: 'hsl(227, 47%, 96%)',
+  textColor: 'hsl(232, 19%, 15%)',
+};
+
+const darkThemeCardStyles: ICardThemeColors = {
+  topCardBackground: 'hsl(228, 28%, 20%)',
+  textColor: primaryColors.white,
 };
 
 export const styles = {
   cardBaseStyle,
   textStyle,
   primaryColors,
+  lightThemeCardStyles,
+  darkThemeCardStyles,
 };
+
+export interface ICardThemeColors {
+  topCardBackground: string;
+  textColor: string;
+}
 
 interface ITextStyle {
   boldText: CSSProperties;

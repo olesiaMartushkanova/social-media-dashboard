@@ -28,17 +28,14 @@ import { TODAY_CARDS_BOTTOM, TODAY_CARDS_TOP } from './data/todayCards';
 const App = () => {
   const [theme, setTheme] = React.useState(Theme.Light);
 
-  const subTitleColor =
-    theme === Theme.Dark
-      ? styles.primaryColors.white
-      : styles.primaryColors.darkGreyish;
+  const colors = theme === Theme.Dark ? darkModeAppStyle : lightModeAppStyle;
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div
         style={{
           ...styleAppGeneral,
-          ...(theme === Theme.Dark ? darkModeAppStyle : lightModeAppStyle),
+          backgroundColor: colors.backgroundColor,
         }}
       >
         <div
@@ -55,10 +52,7 @@ const App = () => {
             <div
               style={{
                 ...styles.textStyle.boldText,
-                color:
-                  theme === Theme.Dark
-                    ? styles.primaryColors.white
-                    : styles.primaryColors.veryDarkBlue,
+                color: colors.titleColor,
                 fontSize: '28px',
                 marginBottom: '3px',
               }}
@@ -76,7 +70,7 @@ const App = () => {
               fontSize: '14px',
               opacity: '85%',
               marginBottom: '40px',
-              color: subTitleColor,
+              color: colors.subTitleColor,
             }}
           >
             Total Followers: 23,004
@@ -106,7 +100,7 @@ const App = () => {
               opacity: '85%',
               marginBottom: '40px',
               marginTop: '30px',
-              color: subTitleColor,
+              color: colors.subTitleColor,
             }}
           >
             Overview - Today
@@ -142,7 +136,7 @@ const App = () => {
             ))}
           </div>
         </div>
-        <Footer />
+        <Footer color={colors.titleColor} />
       </div>
     </ThemeContext.Provider>
   );
@@ -150,12 +144,16 @@ const App = () => {
 
 export default App;
 
-const darkModeAppStyle: CSSProperties = {
+const darkModeAppStyle = {
   backgroundColor: 'hsl(230, 17%, 14%)',
+  subTitleColor: styles.primaryColors.white,
+  titleColor: styles.primaryColors.white,
 };
 
-const lightModeAppStyle: CSSProperties = {
+const lightModeAppStyle = {
   backgroundColor: ' hsl(0, 0%, 100%)',
+  subTitleColor: styles.primaryColors.darkGreyishBlueText,
+  titleColor: styles.primaryColors.darkPageBG,
 };
 
 const styleAppGeneral: CSSProperties = {
