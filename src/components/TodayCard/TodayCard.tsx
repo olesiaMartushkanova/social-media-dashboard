@@ -5,6 +5,13 @@ import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { useTheme, Theme } from '../../context/ThemeContext';
 
+type TodayCardTitleType =
+  | 'Page Views'
+  | 'Likes'
+  | 'Retweets'
+  | 'Profile Views'
+  | 'Total Views';
+
 export interface ITodayCard {
   id: string;
   title: TodayCardTitleType;
@@ -114,10 +121,3 @@ const TodayCard = ({
 };
 
 export default TodayCard;
-
-type TodayCardTitleType =
-  | 'Page Views'
-  | 'Likes'
-  | 'Retweets'
-  | 'Profile Views'
-  | 'Total Views';
