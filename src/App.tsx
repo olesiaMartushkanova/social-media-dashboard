@@ -8,23 +8,6 @@ import { Theme, ThemeContext } from './context/ThemeContext';
 import { SOCIAL_CARDS } from './data/socialCards';
 import { TODAY_CARDS_BOTTOM, TODAY_CARDS_TOP } from './data/todayCards';
 
-// Main App component
-// App component includes all Social Dashboard components
-
-// TODO for App:
-// 1. Add here Switch component
-// 2. Add Redux Provide here
-// 4. Map Today Card components
-
-// TODO: general
-// 1. Create Switch component
-// 2. Install React-Redux
-// 3. Set up Redux store
-// 4. Set up reducer for switching dark/light mode
-
-// 5. Add styles here
-// 6. Organize styles better
-
 const App = () => {
   const [theme, setTheme] = React.useState(Theme.Light);
 

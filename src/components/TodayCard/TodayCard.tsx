@@ -5,9 +5,22 @@ import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { useTheme, Theme } from '../../context/ThemeContext';
 
-const TodayCard = (props: ITodayCard) => {
-  const { title, interactions, icon, percentage, isIncreasedActivity } = props;
+export interface ITodayCard {
+  id: string;
+  title: TodayCardTitleType;
+  icon: any;
+  interactions: number;
+  percentage: number;
+  isIncreasedActivity: boolean;
+}
 
+const TodayCard = ({
+  title,
+  interactions,
+  icon,
+  percentage,
+  isIncreasedActivity,
+}: ITodayCard) => {
   const { theme } = useTheme();
 
   const todayCardThemeStyles =
@@ -101,15 +114,6 @@ const TodayCard = (props: ITodayCard) => {
 };
 
 export default TodayCard;
-
-export interface ITodayCard {
-  id: string;
-  title: TodayCardTitleType;
-  icon: any;
-  interactions: number;
-  percentage: number;
-  isIncreasedActivity: boolean;
-}
 
 type TodayCardTitleType =
   | 'Page Views'

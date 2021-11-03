@@ -13,20 +13,18 @@ export interface ISocialCard {
   todayStatistic: number;
   topLineColor: string;
   isIncreasedActivity: boolean;
-  isFollowers?: boolean;
+  isFollowers: boolean;
 }
 
-const SocialCard = (props: ISocialCard) => {
-  const {
-    icon,
-    iconTitle,
-    interactions,
-    todayStatistic,
-    isFollowers,
-    topLineColor,
-    isIncreasedActivity,
-  } = props;
-
+const SocialCard = ({
+  icon,
+  iconTitle,
+  interactions,
+  todayStatistic,
+  isFollowers,
+  topLineColor,
+  isIncreasedActivity,
+}: ISocialCard) => {
   const { theme } = useTheme();
 
   const socialCardThemeStyles =
