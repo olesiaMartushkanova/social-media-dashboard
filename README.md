@@ -1,6 +1,6 @@
 # Frontend Mentor - Social media dashboard with theme switcher
 
-![Social media dashboard with theme switcher coding challenge](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H)
+[Social media dashboard with theme switcher coding challenge](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H)
 
 ## Project Overview
 
@@ -32,7 +32,7 @@ Your users should be able to:
 - I used Context API for managing Dark/Light mode: I will appreciate any feedback around it.
 - How to better manager different design for Desktop / Mobile with Inline CSS? Can I use Context API again? Any suggestions here would be great.
   As potential solution I am looking at this library:
-  ![react-responsive](https://www.npmjs.com/package/react-responsive)
+  [react-responsive](https://www.npmjs.com/package/react-responsive)
 - Any feedback related to keeping code clean.
 
 ## Running app locally
