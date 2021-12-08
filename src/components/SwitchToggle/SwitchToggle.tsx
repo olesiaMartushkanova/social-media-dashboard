@@ -1,7 +1,7 @@
 import React from 'react';
 import { Theme, useTheme } from '../../context/ThemeContext';
 import { styles } from '../styles';
-import './SwitchToggle.css';
+import stylesNew from './SwitchToggle.module.scss';
 
 const SwitchToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -24,9 +24,9 @@ const SwitchToggle = () => {
       >
         {switchToggleThemeStyles.text}
       </label>
-      <label className="switch">
-        <input className="checkbox" type="checkbox" onChange={onToggled} />
-        <span className="slider"></span>
+      <label className={stylesNew.switch}>
+        <input type="checkbox" onChange={onToggled} />
+        <span className={stylesNew.slider}></span>
       </label>
     </div>
   );

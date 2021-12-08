@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import './App.module.scss';
 import Footer from './components/Footer/Footer';
 import SocialCard from './components/SocialCard/SocialCard';
 import { styles } from './components/styles';
