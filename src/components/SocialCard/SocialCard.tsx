@@ -3,9 +3,10 @@ import { convertNumberToShortThousands } from '../../utils/convertNumber';
 import { styles } from '../styles';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
-import { Theme, useTheme } from '../../context/ThemeContext';
+import { Theme } from '../../context/ThemeContext';
+import { IThemeComponent } from '../../utils/types';
 
-export interface ISocialCard {
+export interface ISocialCard extends IThemeComponent {
   id: string;
   iconTitle: string;
   icon: any;
@@ -24,9 +25,8 @@ const SocialCard = ({
   isFollowers,
   topLineColor,
   isIncreasedActivity,
+  theme,
 }: ISocialCard) => {
-  const { theme } = useTheme();
-
   const socialCardThemeStyles =
     theme === Theme.Dark
       ? styles.darkThemeCardStyles

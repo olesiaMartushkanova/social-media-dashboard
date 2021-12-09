@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .switch {
   position: relative;
   display: inline-block;
@@ -42,4 +44,12 @@
 input:checked + .slider::before {
   transform: translateX(26px);
   background-color: hsl(230, 17%, 14%);
+}
+
+.dark-label {
+  color: $white;
+}
+
+.light-label {
+  color: $greyish-blue;
 }

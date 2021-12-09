@@ -1,16 +1,14 @@
 import React from 'react';
-import { Theme, useTheme } from '../../context/ThemeContext';
+import { Theme } from '../../context/ThemeContext';
+import { IThemeComponent } from '../../utils/types';
 import { styles } from '../styles';
 import stylesNew from './SwitchToggle.module.scss';
 
-const SwitchToggle = () => {
-  const { theme, setTheme } = useTheme();
+interface IToggle extends IThemeComponent {
+  onToggle?: () => any;
+}
 
-  // THis has to be removed and triggered only from app
-  const onToggled = () => {
-    setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
-  };
-
+const SwitchToggle = ({ onToggle, theme }: IToggle) => {
   const switchToggleThemeStyles = theme === Theme.Dark ? darkTheme : lightTheme;
 
   return (
@@ -26,7 +24,7 @@ const SwitchToggle = () => {
         {switchToggleThemeStyles.text}
       </label>
       <label className={stylesNew.switch}>
-        <input type="checkbox" onChange={onToggled} />
+        <input type="checkbox" onChange={onToggle} />
         <span className={stylesNew.slider}></span>
       </label>
     </div>

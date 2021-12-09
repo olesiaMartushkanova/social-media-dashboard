@@ -1,7 +1,7 @@
 import { Theme } from '../context/ThemeContext';
 
 export interface IThemeComponent {
-  theme: ThemeType;
+  theme?: ThemeType;
 }
 
 export type ThemeType = Theme.Dark | Theme.Light;

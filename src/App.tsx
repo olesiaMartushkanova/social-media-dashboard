@@ -13,6 +13,9 @@ const App = () => {
   const [theme, setTheme] = React.useState(Theme.Light);
   const appThemeStyles = theme === Theme.Dark ? darkTheme : lightTheme;
 
+  const handleOnToggle = () =>
+    setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div
@@ -43,7 +46,7 @@ const App = () => {
               Social Media Dashboard
             </div>
             <div style={{ marginLeft: 'auto', marginRight: '70px' }}>
-              <SwitchToggle />
+              <SwitchToggle onToggle={handleOnToggle} />
             </div>
           </div>
 
@@ -71,6 +74,7 @@ const App = () => {
                   topLineColor={card.topLineColor}
                   isFollowers={card.isFollowers}
                   isIncreasedActivity={card.isIncreasedActivity}
+                  theme={theme}
                 />
               </li>
             ))}
