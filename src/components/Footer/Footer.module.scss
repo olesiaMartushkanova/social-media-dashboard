@@ -1,0 +1,14 @@
+@import '../../scss/variables.scss';
+
+.footer {
+  font-size: 14px;
+  text-align: center;
+}
+
+.light-link {
+  color: hsl(228, 45%, 44%);
+}
+
+.dark-link {
+  color: $white;
+}

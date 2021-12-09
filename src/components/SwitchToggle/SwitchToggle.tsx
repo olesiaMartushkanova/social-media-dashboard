@@ -6,6 +6,7 @@ import stylesNew from './SwitchToggle.module.scss';
 const SwitchToggle = () => {
   const { theme, setTheme } = useTheme();
 
+  // THis has to be removed and triggered only from app
   const onToggled = () => {
     setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
   };

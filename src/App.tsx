@@ -11,7 +11,6 @@ import { TODAY_CARDS_BOTTOM, TODAY_CARDS_TOP } from './data/todayCards';
 
 const App = () => {
   const [theme, setTheme] = React.useState(Theme.Light);
-
   const appThemeStyles = theme === Theme.Dark ? darkTheme : lightTheme;
 
   return (
@@ -120,7 +119,7 @@ const App = () => {
             ))}
           </div>
         </div>
-        <Footer color={appThemeStyles.titleColor} />
+        <Footer theme={theme} />
       </div>
     </ThemeContext.Provider>
   );
