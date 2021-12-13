@@ -1,7 +1,9 @@
 import React from 'react';
+import classnames from 'classnames';
 import { Theme } from '../../context/ThemeContext';
 import { IThemeComponent } from '../../utils/types';
 import { styles } from '../styles';
+// TODO: rename stylesNew later
 import stylesNew from './SwitchToggle.module.scss';
 
 interface IToggle extends IThemeComponent {
@@ -14,10 +16,10 @@ const SwitchToggle = ({ onToggle, theme }: IToggle) => {
   return (
     <div>
       <label
+        className={classnames(stylesNew.label)}
         style={{
           ...styles.textStyle.cardTitleText,
           ...styles.textStyle.boldText,
-          marginRight: '5px',
           color: switchToggleThemeStyles.textColor,
         }}
       >

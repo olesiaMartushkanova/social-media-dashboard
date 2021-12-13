@@ -46,6 +46,10 @@ input:checked + .slider::before {
   background-color: hsl(230, 17%, 14%);
 }
 
+.label {
+  margin-right: 5px;
+}
+
 .dark-label {
   color: $white;
 }
