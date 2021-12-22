@@ -1,29 +1,28 @@
 import React from 'react';
-import classnames from 'classnames';
 import { Theme } from '../../context/ThemeContext';
-import { IThemeComponent } from '../../utils/types';
 import { styles } from '../styles';
 // TODO: rename stylesNew later
 import stylesNew from './SwitchToggle.module.scss';
+import { ThemeType } from '../../utils/types';
 
-interface IToggle extends IThemeComponent {
+interface IToggle {
   onToggle?: () => any;
+  theme: ThemeType;
 }
 
 const SwitchToggle = ({ onToggle, theme }: IToggle) => {
-  const switchToggleThemeStyles = theme === Theme.Dark ? darkTheme : lightTheme;
+  const labelText = theme === Theme.Dark ? 'Dark Mode' : 'Light Mode';
 
   return (
     <div>
       <label
-        className={classnames(stylesNew.label)}
+        className={stylesNew.label}
         style={{
           ...styles.textStyle.cardTitleText,
           ...styles.textStyle.boldText,
-          color: switchToggleThemeStyles.textColor,
         }}
       >
-        {switchToggleThemeStyles.text}
+        {labelText}
       </label>
       <label className={stylesNew.switch}>
         <input type="checkbox" onChange={onToggle} />

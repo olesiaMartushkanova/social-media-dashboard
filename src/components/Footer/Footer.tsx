@@ -1,18 +1,18 @@
 import React from 'react';
 import { Theme } from '../../context/ThemeContext';
 import { IThemeComponent } from '../../utils/types';
+import classnames from 'classnames';
 import styles from './Footer.module.scss';
 
-const Footer = ({ theme = Theme.Light }: IThemeComponent) => {
-  const mainTextWithSpace = `Challenge by `;
-  const linkStyle =
-    theme === Theme.Dark ? styles['dark-link'] : styles['light-link'];
+const Footer = ({ theme }: IThemeComponent) => {
+  const footerStyle =
+    theme === Theme.Dark ? classnames(styles.footer, 'dark') : styles.footer;
 
   return (
-    <div className={styles.footer}>
-      {mainTextWithSpace}
+    <div className={footerStyle}>
+      {`Challenge by `}
       <a
-        className={linkStyle}
+        // className={linkStyle}
         href="https://www.frontendmentor.io?ref=challenge"
         target="_blank"
         rel="noreferrer"

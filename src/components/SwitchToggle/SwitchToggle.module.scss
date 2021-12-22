@@ -48,12 +48,9 @@ input:checked + .slider::before {
 
 .label {
   margin-right: 5px;
-}
-
-.dark-label {
-  color: $white;
-}
-
-.light-label {
   color: $greyish-blue;
+
+  &.dark {
+    color: $white;
+  }
 }

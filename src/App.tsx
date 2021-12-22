@@ -1,5 +1,4 @@
-import React, { CSSProperties } from 'react';
-import './App.module.scss';
+import React, { CSSProperties, useEffect } from 'react';
 import Footer from './components/Footer/Footer';
 import SocialCard from './components/SocialCard/SocialCard';
 import { styles } from './components/styles';
@@ -8,6 +7,8 @@ import TodayCard from './components/TodayCard/TodayCard';
 import { Theme, ThemeContext } from './context/ThemeContext';
 import { SOCIAL_CARDS } from './data/socialCards';
 import { TODAY_CARDS_BOTTOM, TODAY_CARDS_TOP } from './data/todayCards';
+import stylesNew from './App.module.scss';
+import classnames from 'classnames';
 
 const App = () => {
   const [theme, setTheme] = React.useState(Theme.Light);
@@ -16,11 +17,20 @@ const App = () => {
   const handleOnToggle = () =>
     setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
 
+  useEffect(() => {
+    return theme === Theme.Dark
+      ? document.body.classList.add('dark')
+      : document.body.classList.remove('dark');
+  }, [theme]);
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div
+        className={classnames(stylesNew.appContainer, {
+          // alternative solution
+          // [stylesNew['text-dark']]: theme === Theme.Dark,
+        })}
         style={{
-          ...styleAppGeneral,
           backgroundColor: appThemeStyles.backgroundColor,
         }}
       >
@@ -29,16 +39,11 @@ const App = () => {
             ...styleAppDesktop,
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-            }}
-          >
+          <div className={stylesNew.socialMediaContainer}>
             <div
               style={{
                 ...styles.textStyle.boldText,
-                color: appThemeStyles.titleColor,
+                // color: appThemeStyles.titleColor,
                 fontSize: '28px',
                 marginBottom: '3px',
               }}
@@ -46,7 +51,7 @@ const App = () => {
               Social Media Dashboard
             </div>
             <div style={{ marginLeft: 'auto', marginRight: '70px' }}>
-              <SwitchToggle onToggle={handleOnToggle} />
+              <SwitchToggle onToggle={handleOnToggle} theme={theme} />
             </div>
           </div>
 
@@ -62,7 +67,7 @@ const App = () => {
             Total Followers: 23,004
           </div>
 
-          <div style={styleCardsGeneral}>
+          <div className={stylesNew.cardsContainer}>
             {SOCIAL_CARDS.map((card) => (
               <li key={card.id}>
                 <SocialCard
@@ -93,7 +98,9 @@ const App = () => {
             Overview - Today
           </div>
 
-          <div style={{ ...styleCardsGeneral, ...styleTodaysCardsTop }}>
+          <div
+            className={classnames(stylesNew.cardsContainer, stylesNew.topCards)}
+          >
             {TODAY_CARDS_TOP.map((card) => (
               <li key={card.id}>
                 <TodayCard
@@ -108,7 +115,7 @@ const App = () => {
             ))}
           </div>
 
-          <div style={styleCardsGeneral}>
+          <div className={stylesNew.cardsContainer}>
             {TODAY_CARDS_BOTTOM.map((card) => (
               <li key={card.id}>
                 <TodayCard
@@ -143,27 +150,8 @@ const lightTheme = {
   titleColor: styles.primaryColors.darkPageBG,
 };
 
-const styleAppGeneral: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  fontFamily: 'Inter, sans-serif',
-  width: '100vw',
-  height: '100vh',
-};
-
 const styleAppDesktop: CSSProperties = {
   marginLeft: '70px',
   marginTop: '40px',
   marginBottom: '20px',
-};
-
-const styleCardsGeneral: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-evenly',
-  listStyleType: 'none',
-};
-
-const styleTodaysCardsTop: CSSProperties = {
-  marginBottom: '15px',
 };

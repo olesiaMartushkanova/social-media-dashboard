@@ -1,3 +1,27 @@
-body {
-  // background-color: red;
+.link {
+  color: red;
+}
+
+.socialMediaContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter, sans-serif';
+  width: 100vw;
+  height: 100vh;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.topCards {
+  margin-bottom: 15px;
 }

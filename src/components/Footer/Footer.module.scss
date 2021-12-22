@@ -3,12 +3,16 @@
 .footer {
   font-size: 14px;
   text-align: center;
+
+  &.dark {
+    background-color: $very-dark-blue-bg;
+  }
 }
 
-.light-link {
+.link {
   color: hsl(228, 45%, 44%);
-}
 
-.dark-link {
-  color: $white;
+  &.dark {
+    color: $white;
+  }
 }
