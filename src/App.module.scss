@@ -1,3 +1,5 @@
+@import './scss/variables.scss';
+
 .link {
   color: red;
 }
@@ -13,6 +15,7 @@
   font-family: 'Inter, sans-serif';
   width: 100vw;
   height: 100vh;
+  background-color: $white;
 }
 
 .cardsContainer {
@@ -24,4 +27,8 @@
 
 .topCards {
   margin-bottom: 15px;
+}
+
+.appDark {
+  background-color: $very-dark-blue-bg;
 }

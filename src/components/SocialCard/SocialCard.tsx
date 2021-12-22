@@ -1,10 +1,10 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import { convertNumberToShortThousands } from '../../utils/convertNumber';
 import { styles } from '../styles';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
-import { Theme } from '../../context/ThemeContext';
 import { IThemeComponent } from '../../utils/types';
+import stylesNew from './SocialCard.module.scss';
 
 export interface ISocialCard extends IThemeComponent {
   id: string;
@@ -27,11 +27,6 @@ const SocialCard = ({
   isIncreasedActivity,
   theme,
 }: ISocialCard) => {
-  const socialCardThemeStyles =
-    theme === Theme.Dark
-      ? styles.darkThemeCardStyles
-      : styles.lightThemeCardStyles;
-
   const followersText = isFollowers ? 'FOLLOWERS' : 'SUBSCRIBERS';
   const socialInteractions =
     convertNumberToShortThousands(interactions).toString();
@@ -44,19 +39,15 @@ const SocialCard = ({
 
   return (
     <>
-      <div style={{ height: '4px', background: topLineColor }} />
+      <div className={stylesNew.topLine} style={{ background: topLineColor }} />
       <div
+        className={stylesNew.container}
         style={{
           ...styles.cardBaseStyle,
-          backgroundColor: socialCardThemeStyles.topCardBackground,
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          color: socialCardThemeStyles.textColor,
         }}
       >
-        <div style={styleCard}>
-          <img src={icon} style={{ marginRight: '4px' }} />
+        <div className={stylesNew.card}>
+          <img className={stylesNew.image} />
           <div
             style={{
               ...styles.textStyle.boldText,
@@ -69,7 +60,7 @@ const SocialCard = ({
         <div style={{ ...styles.textStyle.boldText, fontSize: '45px' }}>
           {socialInteractions}
         </div>
-        <div style={styleFollowersText}>{followersText}</div>
+        <div className={stylesNew.followers}>{followersText}</div>
 
         <div
           style={{
@@ -101,17 +92,3 @@ const SocialCard = ({
 };
 
 export default SocialCard;
-
-const styleCard: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-};
-
-const styleFollowersText: CSSProperties = {
-  ...styles.textStyle.boldText,
-  fontSize: '14px',
-  opacity: '40%',
-  letterSpacing: '5px',
-  marginBottom: '20px',
-};

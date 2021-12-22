@@ -32,14 +32,4 @@ const SwitchToggle = ({ onToggle, theme }: IToggle) => {
   );
 };
 
-const darkTheme = {
-  text: 'Dark Mode',
-  textColor: styles.primaryColors.white,
-};
-
-const lightTheme = {
-  text: 'Light Mode',
-  textColor: styles.primaryColors.darkGreyishBlueText,
-};
-
 export default SwitchToggle;

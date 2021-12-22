@@ -1,0 +1,28 @@
+@import '../../scss/variables.scss';
+
+.topLine {
+  height: '4px';
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.image {
+  margin-right: 4px;
+}
+
+.followers {
+  font-size: 14px;
+  opacity: 40%;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
