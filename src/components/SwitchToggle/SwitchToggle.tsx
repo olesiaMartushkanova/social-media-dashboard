@@ -1,8 +1,6 @@
 import React from 'react';
 import { Theme } from '../../context/ThemeContext';
-import { styles } from '../styles';
-// TODO: rename stylesNew later
-import stylesNew from './SwitchToggle.module.scss';
+import styles from './SwitchToggle.module.scss';
 import { ThemeType } from '../../utils/types';
 
 interface IToggle {
@@ -15,18 +13,10 @@ const SwitchToggle = ({ onToggle, theme }: IToggle) => {
 
   return (
     <div>
-      <label
-        className={stylesNew.label}
-        style={{
-          ...styles.textStyle.cardTitleText,
-          ...styles.textStyle.boldText,
-        }}
-      >
-        {labelText}
-      </label>
-      <label className={stylesNew.switch}>
+      <label className={styles.label}>{labelText}</label>
+      <label className={styles.switch}>
         <input type="checkbox" onChange={onToggle} />
-        <span className={stylesNew.slider}></span>
+        <span className={styles.slider}></span>
       </label>
     </div>
   );
