@@ -3,7 +3,7 @@ import { convertNumberToShortThousands } from '../../utils/convertNumber';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { IThemeComponent } from '../../utils/types';
-import stylesNew from './SocialCard.module.scss';
+import styles from './SocialCard.module.scss';
 
 export interface ISocialCard extends IThemeComponent {
   id: string;
@@ -33,25 +33,29 @@ const SocialCard = ({
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
 
   return (
-    <>
-      <div className={stylesNew.topLine} style={{ background: topLineColor }} />
-      <div className={stylesNew.container}>
-        <div className={stylesNew.card}>
-          <img className={stylesNew.image} />
+    <div className={styles.cardBase}>
+      <div className={styles.topLine} style={{ background: topLineColor }} />
+      <div className={styles.mainContentContainer}>
+        <div className={styles.iconContainer}>
+          <img className={styles.image} src={icon} />
           <div>{iconTitle}</div>
         </div>
-        <div>{socialInteractions}</div>
-        <div className={stylesNew.followers}>{followersText}</div>
+        <div className={styles.socialInteractionsNumber}>
+          {socialInteractions}
+        </div>
+        <div className={styles.followers}>{followersText}</div>
 
         <div>
           <div>
-            <img className={stylesNew.image} src={activityIcon} />
+            <img className={styles.image} src={activityIcon} />
           </div>
 
-          <div>{`${todayStatistic.toString()} Today`}</div>
+          <div
+            className={styles.todayNumber}
+          >{`${todayStatistic.toString()} Today`}</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

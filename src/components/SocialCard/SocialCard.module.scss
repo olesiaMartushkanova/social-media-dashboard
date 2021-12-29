@@ -1,19 +1,30 @@
-@use '../../scss/variables.scss';
+// TODO: need to replace import with use
+@import '../../scss/variables.scss';
 
-.topLine {
-  height: '4px';
+.cardBase {
+  background-color: $very-pale-blue;
+  box-sizing: content-box;
+  width: 50%;
 }
 
-.container {
+.topLine {
+  height: 4px;
+}
+
+.mainContentContainer {
   text-align: center;
   display: flex;
   flex-direction: column;
+  font-weight: $bold-text;
 }
 
-.card {
+.iconContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  color: $dark-greyish-blue;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .image {
@@ -25,5 +36,14 @@
   font-size: 14px;
   opacity: 40%;
   letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+.socialInteractionsNumber {
+  font-size: 45px;
+}
+
+.todayNumber {
+  color: $lime-green;
   margin-bottom: 20px;
 }
