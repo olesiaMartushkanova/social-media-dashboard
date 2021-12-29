@@ -1,4 +1,4 @@
 node_modules
 package-lock.json
-src/css
 yarn-error.log
+src/stories
