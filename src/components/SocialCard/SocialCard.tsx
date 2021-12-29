@@ -1,6 +1,5 @@
 import React from 'react';
 import { convertNumberToShortThousands } from '../../utils/convertNumber';
-import { styles } from '../styles';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { IThemeComponent } from '../../utils/types';
@@ -31,60 +30,25 @@ const SocialCard = ({
   const socialInteractions =
     convertNumberToShortThousands(interactions).toString();
 
-  const activityTextColor = isIncreasedActivity
-    ? styles.primaryColors.limeGreen
-    : styles.primaryColors.brightRed;
-
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
 
   return (
     <>
       <div className={stylesNew.topLine} style={{ background: topLineColor }} />
-      <div
-        className={stylesNew.container}
-        style={{
-          ...styles.cardBaseStyle,
-        }}
-      >
+      <div className={stylesNew.container}>
         <div className={stylesNew.card}>
           <img className={stylesNew.image} />
-          <div
-            style={{
-              ...styles.textStyle.boldText,
-              ...styles.textStyle.cardTitleText,
-            }}
-          >
-            {iconTitle}
-          </div>
+          <div>{iconTitle}</div>
         </div>
-        <div style={{ ...styles.textStyle.boldText, fontSize: '45px' }}>
-          {socialInteractions}
-        </div>
+        <div>{socialInteractions}</div>
         <div className={stylesNew.followers}>{followersText}</div>
 
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-          }}
-        >
+        <div>
           <div>
-            <img
-              src={activityIcon}
-              style={{ marginRight: '4px', marginBottom: '5px' }}
-            />
+            <img className={stylesNew.image} src={activityIcon} />
           </div>
 
-          <div
-            style={{
-              ...styles.textStyle.boldText,
-              color: activityTextColor,
-              fontSize: '11px',
-            }}
-          >
-            {`${todayStatistic.toString()} Today`}
-          </div>
+          <div>{`${todayStatistic.toString()} Today`}</div>
         </div>
       </div>
     </>
