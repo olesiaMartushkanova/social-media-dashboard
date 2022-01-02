@@ -1,0 +1,8 @@
+// TODO: need to replace import with use
+@import '../../../scss/variables.scss';
+
+.card {
+  background-color: $very-pale-blue;
+  box-sizing: content-box;
+  width: 50%;
+}

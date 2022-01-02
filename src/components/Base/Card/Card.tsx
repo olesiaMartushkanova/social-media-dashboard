@@ -1,7 +1,12 @@
 import React from 'react';
+import styles from './Card.module.scss';
 
-const Card = () => {
-  return <div>Base card components</div>;
-};
+export interface ICard {
+  children?: any;
+}
+
+const Card = ({ children }: ICard) => (
+  <div className={styles.card}>{children}</div>
+);
 
 export default Card;

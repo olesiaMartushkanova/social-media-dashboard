@@ -4,6 +4,7 @@ import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { IThemeComponent } from '../../utils/types';
 import styles from './SocialCard.module.scss';
+import Card from '../Base/Card/Card';
 
 export interface ISocialCard extends IThemeComponent {
   id: string;
@@ -33,7 +34,7 @@ const SocialCard = ({
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
 
   return (
-    <div className={styles.cardBase}>
+    <Card>
       <div className={styles.topLine} style={{ background: topLineColor }} />
       <div className={styles.mainContentContainer}>
         <div className={styles.iconContainer}>
@@ -55,7 +56,7 @@ const SocialCard = ({
           >{`${todayStatistic.toString()} Today`}</div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 
