@@ -1,12 +1,24 @@
 import React from 'react';
+import classnames from 'classnames';
 import styles from './Card.module.scss';
+import { IThemeComponent } from '../../../utils/types';
+import { Theme } from '../../../context/ThemeContext';
 
 export interface ICard {
   children?: any;
+  theme?: IThemeComponent;
 }
 
-const Card = ({ children }: ICard) => (
-  <div className={styles.card}>{children}</div>
-);
+const Card = ({ children, theme }: ICard) => {
+  return (
+    <div
+      className={classnames(styles.card, {
+        [styles.cardDark]: theme === Theme.Dark,
+      })}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default Card;

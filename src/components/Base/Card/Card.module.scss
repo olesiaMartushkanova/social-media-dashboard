@@ -5,4 +5,10 @@
   background-color: $very-pale-blue;
   box-sizing: content-box;
   width: 50%;
+  color: $black;
+}
+
+.cardDark {
+  background-color: $dark-desaturated-blue;
+  color: $white;
 }
