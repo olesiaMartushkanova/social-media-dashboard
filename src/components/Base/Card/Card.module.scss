@@ -1,5 +1,6 @@
 // TODO: need to replace import with use
 @import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
 
 .card {
   background-color: $very-pale-blue;
@@ -11,4 +12,9 @@
 .cardDark {
   background-color: $dark-desaturated-blue;
   color: $white;
+
+  // EXAMPLE OF RESPONSIVE
+  @include media-desktop() {
+    background-color: red;
+  }
 }
