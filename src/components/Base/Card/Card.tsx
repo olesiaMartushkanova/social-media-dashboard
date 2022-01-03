@@ -4,9 +4,8 @@ import styles from './Card.module.scss';
 import { IThemeComponent } from '../../../utils/types';
 import { Theme } from '../../../context/ThemeContext';
 
-export interface ICard {
+export interface ICard extends IThemeComponent {
   children?: any;
-  theme?: IThemeComponent;
 }
 
 const Card = ({ children, theme }: ICard) => {

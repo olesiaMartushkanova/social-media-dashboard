@@ -1,10 +1,12 @@
 import React from 'react';
+import classnames from 'classnames';
 import { convertNumberToShortThousands } from '../../utils/convertNumber';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { IThemeComponent } from '../../utils/types';
 import styles from './SocialCard.module.scss';
 import Card from '../Base/Card/Card';
+import { Theme } from '../../context/ThemeContext';
 
 export interface ISocialCard extends IThemeComponent {
   id: string;
@@ -34,9 +36,13 @@ const SocialCard = ({
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
 
   return (
-    <Card>
+    <Card theme={theme}>
       <div className={styles.topLine} style={{ background: topLineColor }} />
-      <div className={styles.mainContentContainer}>
+      <div
+        className={classnames(styles.mainContentContainer, {
+          ['dark']: theme === Theme.Dark,
+        })}
+      >
         <div className={styles.iconContainer}>
           <img className={styles.image} src={icon} />
           <div>{iconTitle}</div>
