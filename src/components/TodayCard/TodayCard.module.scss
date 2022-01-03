@@ -1,0 +1,19 @@
+.mainContentContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.activityContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.activityIcon {
+  margin-right: 3px;
+  margin-bottom: 3px;
+}

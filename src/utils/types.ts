@@ -1,6 +1,6 @@
 import { Theme } from '../context/ThemeContext';
 
-export interface IThemeComponent {
+export interface ITheme {
   theme?: ThemeType;
 }
 

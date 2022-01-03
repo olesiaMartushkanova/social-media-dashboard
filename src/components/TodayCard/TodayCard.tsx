@@ -1,8 +1,11 @@
 import React from 'react';
-import { convertNumberToShortThousands } from '../../utils/convertNumber';
+import classnames from 'classnames';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
-import { useTheme, Theme } from '../../context/ThemeContext';
+import { ITheme } from '../../utils/types';
+import { convertNumberToShortThousands } from '../../utils/convertNumber';
+import Card from '../Base/Card/Card';
+import styles from './TodayCard.module.scss';
 
 type TodayCardTitleType =
   | 'Page Views'
@@ -11,7 +14,7 @@ type TodayCardTitleType =
   | 'Profile Views'
   | 'Total Views';
 
-export interface ITodayCard {
+export interface ITodayCard extends ITheme {
   id: string;
   title: TodayCardTitleType;
   icon: any;
@@ -26,37 +29,33 @@ const TodayCard = ({
   icon,
   percentage,
   isIncreasedActivity,
+  theme,
 }: ITodayCard) => {
-  const { theme } = useTheme();
-
   const socialInteractions =
     convertNumberToShortThousands(interactions).toString();
 
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
 
   return (
-    <div>
-      <div>
-        <div className="title__todayCard">{title}</div>
+    <Card theme={theme} className={styles.mainContentContainer}>
+      <div className={classnames(styles.column)}>
+        <div>{title}</div>
         <div>{socialInteractions}</div>
       </div>
 
-      <div>
+      <div className={classnames(styles.column)}>
         <div>
           <img src={icon} />
         </div>
 
-        <div>
+        <div className={styles.activityContainer}>
           <div>
-            <img
-              src={activityIcon}
-              style={{ marginRight: '4px', marginBottom: '5px' }}
-            />
+            <img className={styles.activityIcon} src={activityIcon} />
           </div>
           <div>{`${percentage.toString()}%`}</div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

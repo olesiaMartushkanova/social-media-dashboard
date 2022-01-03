@@ -1,10 +1,10 @@
 import React from 'react';
-import { IThemeComponent } from '../../utils/types';
+import { ITheme } from '../../utils/types';
 import classnames from 'classnames';
 import styles from './Footer.module.scss';
 import { Theme } from '../../context/ThemeContext';
 
-const Footer = ({ theme }: IThemeComponent) => {
+const Footer = ({ theme }: ITheme) => {
   const dark = theme === Theme.Dark;
 
   return (

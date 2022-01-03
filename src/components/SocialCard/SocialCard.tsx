@@ -2,11 +2,11 @@ import React from 'react';
 import { convertNumberToShortThousands } from '../../utils/convertNumber';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
-import { IThemeComponent } from '../../utils/types';
+import { ITheme } from '../../utils/types';
 import styles from './SocialCard.module.scss';
 import Card from '../Base/Card/Card';
 
-export interface ISocialCard extends IThemeComponent {
+export interface ISocialCard extends ITheme {
   id: string;
   iconTitle: string;
   icon: any;
@@ -46,7 +46,7 @@ const SocialCard = ({
         </div>
         <div className={styles.followers}>{followersText}</div>
 
-        <div>
+        <div className={styles.activityContainer}>
           <div>
             <img className={styles.image} src={activityIcon} />
           </div>
