@@ -1,8 +1,13 @@
 // TODO: need to replace import with use
 @import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 .topLine {
-  height: 4px;
+  height: 2px;
+
+  @include media-desktop() {
+    height: 4px;
+  }
 }
 
 .mainContentContainer {
@@ -17,8 +22,15 @@
   flex-direction: row;
   justify-content: center;
   color: $dark-greyish-blue;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 10px;
+
+  @include media-desktop() {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
 }
 
 .image {
@@ -27,17 +39,33 @@
 }
 
 .followers {
-  font-size: 14px;
   opacity: 40%;
-  letter-spacing: 5px;
-  margin-bottom: 20px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+
+  @include media-desktop() {
+    font-size: 14px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+  }
 }
 
 .socialInteractionsNumber {
-  font-size: 45px;
+  font-size: 25px;
+
+  @include media-desktop() {
+    font-size: 45px;
+  }
 }
 
 .todayNumber {
   color: $lime-green;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 10px;
+
+  @include media-desktop() {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
 }
