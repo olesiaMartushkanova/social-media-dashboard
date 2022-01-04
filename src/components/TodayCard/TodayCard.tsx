@@ -38,12 +38,13 @@ const TodayCard = ({
 
   return (
     <Card theme={theme} className={styles.mainContentContainer}>
-      <div className={classnames(styles.column)}>
+      <div>
         <div>{title}</div>
         <div>{socialInteractions}</div>
       </div>
 
-      <div className={classnames(styles.column)}>
+      {/* RIGHT COLUMN */}
+      <div>
         <div>
           <img src={icon} />
         </div>
