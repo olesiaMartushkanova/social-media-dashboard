@@ -35,25 +35,30 @@ const TodayCard = ({
     convertNumberToShortThousands(interactions).toString();
 
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
+  const activityColor = isIncreasedActivity
+    ? 'hsl(163, 72%, 41%)'
+    : 'hsl(356, 69%, 56%)';
 
   return (
     <Card theme={theme} className={styles.mainContentContainer}>
-      <div>
-        <div>{title}</div>
-        <div>{socialInteractions}</div>
+      <div className={classnames(styles.column, styles.leftColumn)}>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.socialInteraction}>{socialInteractions}</div>
       </div>
 
-      {/* RIGHT COLUMN */}
-      <div>
+      <div className={classnames(styles.column, styles.rightColumn)}>
         <div>
-          <img src={icon} />
+          <img className={styles.socialIcon} src={icon} />
         </div>
 
         <div className={styles.activityContainer}>
           <div>
             <img className={styles.activityIcon} src={activityIcon} />
           </div>
-          <div>{`${percentage.toString()}%`}</div>
+          <div
+            className={styles.activityNumber}
+            style={{ color: activityColor }}
+          >{`${percentage.toString()}%`}</div>
         </div>
       </div>
     </Card>

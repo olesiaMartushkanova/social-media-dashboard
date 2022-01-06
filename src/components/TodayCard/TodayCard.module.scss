@@ -1,14 +1,73 @@
+// TODO: need to replace import with use
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
 .mainContentContainer {
   display: flex;
   justify-content: space-between;
+  font-weight: $bold-text;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rightColumn {
+  margin-right: 10px;
+}
+
+.leftColumn {
+  margin-left: 10px;
 }
 
 .activityContainer {
   display: flex;
   flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: auto;
 }
 
 .activityIcon {
   margin-right: 3px;
   margin-bottom: 3px;
+}
+
+.socialInteraction {
+  margin-top: 12px;
+  margin-bottom: auto;
+  font-size: 22px;
+
+  @include media-desktop() {
+    font-size: 35px;
+  }
+}
+
+.title {
+  font-weight: $bold-text;
+  color: $dark-greyish-blue;
+  font-size: 10px;
+
+  @include media-desktop() {
+    font-size: 14px;
+  }
+}
+
+.activityNumber {
+  font-size: 10px;
+
+  @include media-desktop() {
+    font-size: 14px;
+  }
+}
+
+.socialIcon {
+  width: 14px;
+  height: auto;
+
+  @include media-desktop() {
+    width: 20px;
+  }
 }
