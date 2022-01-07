@@ -28,17 +28,20 @@ const App = () => {
           [styles.appDark]: theme === Theme.Dark,
         })}
       >
-        <div>
-          <div className={styles.socialMediaContainer}>
-            <div>Social Media Dashboard</div>
-            <div style={{ marginLeft: 'auto', marginRight: '70px' }}>
-              <SwitchToggle onToggle={handleOnToggle} theme={theme} />
-            </div>
+        <div className={styles.socialMediaContainer}>
+          <div className={styles.mainTitle}>Social Media Dashboard</div>
+
+          <div className={styles.totalFollowersText}>
+            Total Followers: 23,004
           </div>
 
-          <div>Total Followers: 23,004</div>
+          <div className={styles.toggleContainer}>
+            <label className={styles.switchToggleLabel}>Light Mode</label>
+            <SwitchToggle onToggle={handleOnToggle} />
+          </div>
+        </div>
 
-          <div className={styles.cardsContainer}>
+        {/* <div className={styles.cardsContainer}>
             {SOCIAL_CARDS.map((card) => (
               <li key={card.id}>
                 <SocialCard
@@ -85,10 +88,9 @@ const App = () => {
                   isIncreasedActivity={card.isIncreasedActivity}
                 />
               </li>
-            ))}
-          </div>
-        </div>
-        <Footer theme={theme} />
+            ))} */}
+        {/* </div> */}
+        {/* <Footer theme={theme} /> */}
       </div>
     </ThemeContext.Provider>
   );

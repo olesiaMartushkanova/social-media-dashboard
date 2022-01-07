@@ -4,11 +4,6 @@
   color: red;
 }
 
-.socialMediaContainer {
-  display: flex;
-  flex-direction: row;
-}
-
 .appContainer {
   display: flex;
   flex-direction: column;
@@ -16,6 +11,37 @@
   width: 100vw;
   height: 100vh;
   background-color: $white;
+  font-weight: $bold-text;
+  margin-left: 25px;
+  margin-top: 35px;
+}
+
+.mainTitle {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.socialMediaContainer {
+  // display: flex;
+  // flex-direction: row;
+}
+
+.totalFollowersText {
+  color: $dark-greyish-blue;
+  margin-bottom: 15px;
+}
+
+.toggleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80vw;
+}
+
+.switchToggleLabel {
+  color: $dark-greyish-blue;
+  font-size: 12px;
+  margin-right: 25px;
 }
 
 .cardsContainer {
