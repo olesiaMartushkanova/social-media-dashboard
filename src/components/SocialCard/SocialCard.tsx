@@ -6,7 +6,6 @@ import IconUp from '../../images/icon-up.svg';
 import { ITheme } from '../../utils/types';
 import styles from './SocialCard.module.scss';
 import Card from '../Base/Card/Card';
-import classNames from 'classnames';
 
 export interface ISocialCard extends ITheme {
   id: string;

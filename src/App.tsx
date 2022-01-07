@@ -43,7 +43,7 @@ const App = () => {
 
         <div className={styles.cardsContainer}>
           {SOCIAL_CARDS.map((card) => (
-            <li key={card.id}>
+            <li className={styles.socialCardListItem} key={card.id}>
               <SocialCard
                 id={card.id}
                 iconTitle={card.iconTitle}
