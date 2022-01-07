@@ -41,25 +41,25 @@ const App = () => {
           </div>
         </div>
 
-        {/* <div className={styles.cardsContainer}>
-            {SOCIAL_CARDS.map((card) => (
-              <li key={card.id}>
-                <SocialCard
-                  id={card.id}
-                  iconTitle={card.iconTitle}
-                  interactions={card.interactions}
-                  todayStatistic={card.todayStatistic}
-                  icon={card.icon}
-                  topLineColor={card.topLineColor}
-                  isFollowers={card.isFollowers}
-                  isIncreasedActivity={card.isIncreasedActivity}
-                  theme={theme}
-                />
-              </li>
-            ))}
-          </div>
+        <div className={styles.cardsContainer}>
+          {SOCIAL_CARDS.map((card) => (
+            <li key={card.id}>
+              <SocialCard
+                id={card.id}
+                iconTitle={card.iconTitle}
+                interactions={card.interactions}
+                todayStatistic={card.todayStatistic}
+                icon={card.icon}
+                topLineColor={card.topLineColor}
+                isFollowers={card.isFollowers}
+                isIncreasedActivity={card.isIncreasedActivity}
+                theme={theme}
+              />
+            </li>
+          ))}
+        </div>
 
-          <div>Overview - Today</div>
+        {/* <div>Overview - Today</div>
 
           <div className={classnames(styles.cardsContainer, styles.topCards)}>
             {TODAY_CARDS_TOP.map((card) => (
@@ -88,9 +88,9 @@ const App = () => {
                   isIncreasedActivity={card.isIncreasedActivity}
                 />
               </li>
-            ))} */}
-        {/* </div> */}
-        {/* <Footer theme={theme} /> */}
+            ))} 
+        </div>
+        <Footer theme={theme} /> */}
       </div>
     </ThemeContext.Provider>
   );

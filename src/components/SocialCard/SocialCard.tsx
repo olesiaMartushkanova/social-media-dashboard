@@ -1,10 +1,12 @@
 import React from 'react';
+import classnames from 'classnames';
 import { convertNumberToShortThousands } from '../../utils/convertNumber';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { ITheme } from '../../utils/types';
 import styles from './SocialCard.module.scss';
 import Card from '../Base/Card/Card';
+import classNames from 'classnames';
 
 export interface ISocialCard extends ITheme {
   id: string;
@@ -48,7 +50,10 @@ const SocialCard = ({
 
         <div className={styles.activityContainer}>
           <div>
-            <img className={styles.image} src={activityIcon} />
+            <img
+              className={classnames(styles.image, styles.activityIcon)}
+              src={activityIcon}
+            />
           </div>
 
           <div

@@ -46,8 +46,8 @@
 
 .cardsContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-between;
   list-style-type: none;
 }
 
