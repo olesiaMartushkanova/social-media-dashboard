@@ -1,19 +1,21 @@
 import React from 'react';
-import { Theme } from '../../context/ThemeContext';
-import styles from './SwitchToggle.module.scss';
-import { ThemeType } from '../../utils/types';
 
-interface IToggle {
+import styles from './SwitchToggle.module.scss';
+
+export interface ISwitchToggle {
   onToggle?: () => any;
-  theme: ThemeType;
 }
 
-const SwitchToggle = ({ onToggle, theme }: IToggle) => {
-  const labelText = theme === Theme.Dark ? 'Dark Mode' : 'Light Mode';
+const SwitchToggle = ({ onToggle }: ISwitchToggle) => {
+  // const labelText = theme === Theme.Dark ? 'Dark' : 'Light';
 
   return (
     <div>
-      <label className={styles.label}>{labelText}</label>
+      {/* <label
+        className={classnames(styles.label, {
+          [styles.labelDark]: theme === Theme.Dark,
+        })}
+      >{`${labelText} Mode`}</label> */}
       <label className={styles.switch}>
         <input type="checkbox" onChange={onToggle} />
         <span className={styles.slider}></span>
