@@ -75,14 +75,15 @@ li {
   }
 }
 
-.bottomTodayCards {
-  margin: 0 auto;
-}
-
 .overviewTitle {
   color: $dark-greyish-blue;
   font-size: 20px;
   margin-bottom: 22px;
+
+  @include media-desktop() {
+    font-size: 28px;
+    margin-top: 40px;
+  }
 }
 
 .appDark {
