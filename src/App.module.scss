@@ -10,7 +10,7 @@
   justify-content: space-between;
   flex-direction: column;
   font-family: 'Inter, sans-serif';
-  width: 100vw;
+  width: auto;
   height: 100vh;
   background-color: $white;
   font-weight: $bold-text;
@@ -18,7 +18,9 @@
   margin-top: 35px;
 
   @include media-desktop() {
-    margin-left: 30px;
+    margin-top: 70px;
+    margin-right: 80px;
+    margin-left: 80px;
   }
 }
 
@@ -32,11 +34,6 @@
   }
 }
 
-.socialMediaContainer {
-  // display: flex;
-  // flex-direction: row;
-}
-
 .totalFollowersText {
   color: $dark-greyish-blue;
   margin-bottom: 15px;
@@ -48,10 +45,6 @@
   justify-content: space-between;
   width: 80vw;
   margin-bottom: 25px;
-
-  @include media-desktop() {
-    justify-content: none;
-  }
 }
 
 .switchToggleLabel {
@@ -69,11 +62,17 @@
   @include media-desktop() {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    align-content: flex-start;
   }
 }
 
 li {
   margin-bottom: 20px;
+
+  @include media-desktop() {
+    margin: 0 auto 0 0;
+  }
 }
 
 .bottomTodayCards {
