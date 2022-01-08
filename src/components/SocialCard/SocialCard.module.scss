@@ -1,0 +1,93 @@
+// TODO: need to replace import with use
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.card {
+  width: 85%;
+  color: $black;
+
+  @include media-desktop() {
+    width: 200%;
+  }
+}
+
+.topLine {
+  height: 2px;
+
+  @include media-desktop() {
+    height: 4px;
+  }
+}
+
+.mainContentContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: $bold-text;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: $dark-greyish-blue;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 10px;
+
+  @include media-desktop() {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+}
+
+.image {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 15px;
+  height: auto;
+}
+
+.followers {
+  opacity: 40%;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+
+  @include media-desktop() {
+    font-size: 14px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+.socialInteractionsNumber {
+  font-size: 40px;
+
+  @include media-desktop() {
+    font-size: 45px;
+  }
+}
+
+.todayNumber {
+  color: $lime-green;
+  margin-bottom: 10px;
+  font-size: 10px;
+
+  @include media-desktop() {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+}
+
+.activityContainer {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.activityIcon {
+  width: 7px;
+  height: auto;
+}

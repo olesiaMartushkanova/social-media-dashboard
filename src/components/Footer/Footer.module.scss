@@ -1,0 +1,27 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.footer {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  font-size: 14px;
+  font-weight: $standard-text;
+
+  @include media-desktop() {
+    font-size: 18px;
+    bottom: 0px;
+  }
+}
+
+.link {
+  color: hsl(228, 45%, 44%);
+}
+
+.footerDark {
+  color: $white;
+}
+
+.linkDark {
+  color: $white;
+}

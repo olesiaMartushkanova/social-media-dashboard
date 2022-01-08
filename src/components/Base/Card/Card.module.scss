@@ -1,0 +1,14 @@
+// TODO: need to replace import with use
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+.card {
+  background-color: $very-pale-blue;
+  box-sizing: border-box;
+  color: $black;
+}
+
+.cardDark {
+  background-color: $dark-desaturated-blue;
+  color: $white;
+}

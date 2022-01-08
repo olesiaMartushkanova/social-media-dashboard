@@ -4,10 +4,12 @@
     "jsx": "react",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": ["dom", "esnext"],
     "strict": true,
     "sourceMap": true,
-    "target": "esnext"
+    "target": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "lib": ["dom", "dom.iterable", "esnext", "es6"]
   },
   "exclude": ["node_modules"],
   "include": ["src", "src/custom.d.ts"]

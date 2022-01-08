@@ -1,11 +1,13 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
+import classnames from 'classnames';
 import { convertNumberToShortThousands } from '../../utils/convertNumber';
-import { styles } from '../styles';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
-import { Theme, useTheme } from '../../context/ThemeContext';
+import { ITheme } from '../../utils/types';
+import styles from './SocialCard.module.scss';
+import Card from '../Base/Card/Card';
 
-export interface ISocialCard {
+export interface ISocialCard extends ITheme {
   id: string;
   iconTitle: string;
   icon: any;
@@ -14,6 +16,7 @@ export interface ISocialCard {
   topLineColor: string;
   isIncreasedActivity: boolean;
   isFollowers: boolean;
+  className?: string;
 }
 
 const SocialCard = ({
@@ -24,94 +27,42 @@ const SocialCard = ({
   isFollowers,
   topLineColor,
   isIncreasedActivity,
+  theme,
 }: ISocialCard) => {
-  const { theme } = useTheme();
-
-  const socialCardThemeStyles =
-    theme === Theme.Dark
-      ? styles.darkThemeCardStyles
-      : styles.lightThemeCardStyles;
-
   const followersText = isFollowers ? 'FOLLOWERS' : 'SUBSCRIBERS';
   const socialInteractions =
     convertNumberToShortThousands(interactions).toString();
 
-  const activityTextColor = isIncreasedActivity
-    ? styles.primaryColors.limeGreen
-    : styles.primaryColors.brightRed;
-
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
 
   return (
-    <>
-      <div style={{ height: '4px', background: topLineColor }} />
-      <div
-        style={{
-          ...styles.cardBaseStyle,
-          backgroundColor: socialCardThemeStyles.topCardBackground,
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          color: socialCardThemeStyles.textColor,
-        }}
-      >
-        <div style={styleCard}>
-          <img src={icon} style={{ marginRight: '4px' }} />
-          <div
-            style={{
-              ...styles.textStyle.boldText,
-              ...styles.textStyle.cardTitleText,
-            }}
-          >
-            {iconTitle}
-          </div>
+    <Card theme={theme} className={styles.card}>
+      <div className={styles.topLine} style={{ background: topLineColor }} />
+      <div className={styles.mainContentContainer}>
+        <div className={styles.iconContainer}>
+          <img className={styles.image} src={icon} />
+          <div>{iconTitle}</div>
         </div>
-        <div style={{ ...styles.textStyle.boldText, fontSize: '45px' }}>
+        <div className={styles.socialInteractionsNumber}>
           {socialInteractions}
         </div>
-        <div style={styleFollowersText}>{followersText}</div>
+        <div className={styles.followers}>{followersText}</div>
 
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-          }}
-        >
+        <div className={styles.activityContainer}>
           <div>
             <img
+              className={classnames(styles.image, styles.activityIcon)}
               src={activityIcon}
-              style={{ marginRight: '4px', marginBottom: '5px' }}
             />
           </div>
 
           <div
-            style={{
-              ...styles.textStyle.boldText,
-              color: activityTextColor,
-              fontSize: '11px',
-            }}
-          >
-            {`${todayStatistic.toString()} Today`}
-          </div>
+            className={styles.todayNumber}
+          >{`${todayStatistic.toString()} Today`}</div>
         </div>
       </div>
-    </>
+    </Card>
   );
 };
 
 export default SocialCard;
-
-const styleCard: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-};
-
-const styleFollowersText: CSSProperties = {
-  ...styles.textStyle.boldText,
-  fontSize: '14px',
-  opacity: '40%',
-  letterSpacing: '5px',
-  marginBottom: '20px',
-};

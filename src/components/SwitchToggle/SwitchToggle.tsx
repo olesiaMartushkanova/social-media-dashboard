@@ -1,45 +1,20 @@
 import React from 'react';
-import { Theme, useTheme } from '../../context/ThemeContext';
-import { styles } from '../styles';
-import './SwitchToggle.css';
+import styles from './SwitchToggle.module.scss';
 
-const SwitchToggle = () => {
-  const { theme, setTheme } = useTheme();
+export interface ISwitchToggle {
+  className?: string;
+  onToggle?: () => any;
+}
 
-  const onToggled = () => {
-    setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
-  };
-
-  const switchToggleThemeStyles = theme === Theme.Dark ? darkTheme : lightTheme;
-
+const SwitchToggle = ({ onToggle, className }: ISwitchToggle) => {
   return (
-    <div>
-      <label
-        style={{
-          ...styles.textStyle.cardTitleText,
-          ...styles.textStyle.boldText,
-          marginRight: '5px',
-          color: switchToggleThemeStyles.textColor,
-        }}
-      >
-        {switchToggleThemeStyles.text}
-      </label>
-      <label className="switch">
-        <input className="checkbox" type="checkbox" onChange={onToggled} />
-        <span className="slider"></span>
+    <div className={className}>
+      <label className={styles.switch}>
+        <input type="checkbox" onChange={onToggle} />
+        <span className={styles.slider}></span>
       </label>
     </div>
   );
-};
-
-const darkTheme = {
-  text: 'Dark Mode',
-  textColor: styles.primaryColors.white,
-};
-
-const lightTheme = {
-  text: 'Light Mode',
-  textColor: styles.primaryColors.darkGreyishBlueText,
 };
 
 export default SwitchToggle;

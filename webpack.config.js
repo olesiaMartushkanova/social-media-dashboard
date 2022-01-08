@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 const prod = process.env.NODE_ENV === 'production';
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -15,13 +17,39 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         resolve: {
-          extensions: ['.ts', '.tsx', '.js', '.json'],
+          extensions: ['.ts', '.tsx', '.js', '.json', '.scss'],
         },
         use: 'ts-loader',
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+            },
+          },
+        ],
+        include: /\.module\.scss$/,
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { modules: true },
+          },
+        ],
       },
       {
         test: /\.svg$/,

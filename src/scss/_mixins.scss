@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+// Breakpoints media query
+@mixin screen-media($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @include screen-media($size-desktop) {
+    @content;
+  }
+}

@@ -1,9 +1,11 @@
 import React from 'react';
-import { convertNumberToShortThousands } from '../../utils/convertNumber';
-import { styles } from '../styles';
+import classnames from 'classnames';
 import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
-import { useTheme, Theme } from '../../context/ThemeContext';
+import { ITheme } from '../../utils/types';
+import { convertNumberToShortThousands } from '../../utils/convertNumber';
+import Card from '../Base/Card/Card';
+import styles from './TodayCard.module.scss';
 
 type TodayCardTitleType =
   | 'Page Views'
@@ -12,7 +14,7 @@ type TodayCardTitleType =
   | 'Profile Views'
   | 'Total Views';
 
-export interface ITodayCard {
+export interface ITodayCard extends ITheme {
   id: string;
   title: TodayCardTitleType;
   icon: any;
@@ -27,96 +29,39 @@ const TodayCard = ({
   icon,
   percentage,
   isIncreasedActivity,
+  theme,
 }: ITodayCard) => {
-  const { theme } = useTheme();
-
-  const todayCardThemeStyles =
-    theme === Theme.Dark
-      ? styles.darkThemeCardStyles
-      : styles.lightThemeCardStyles;
-
   const socialInteractions =
     convertNumberToShortThousands(interactions).toString();
 
-  const activityTextColor = isIncreasedActivity
-    ? styles.primaryColors.limeGreen
-    : styles.primaryColors.brightRed;
-
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
+  const activityColor = isIncreasedActivity
+    ? 'hsl(163, 72%, 41%)'
+    : 'hsl(356, 69%, 56%)';
 
   return (
-    <div
-      style={{
-        ...styles.cardBaseStyle,
-        backgroundColor: todayCardThemeStyles.topCardBackground,
-        color: todayCardThemeStyles.textColor,
-        display: 'flex',
-      }}
+    <Card
+      theme={theme}
+      className={classnames(styles.mainContentContainer, styles.card)}
     >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          marginRight: 'auto',
-        }}
-      >
-        <div
-          className="title__todayCard"
-          style={{
-            ...styles.textStyle.boldText,
-            ...styles.textStyle.cardTitleText,
-            marginBottom: '30px',
-          }}
-        >
-          {title}
-        </div>
-        <div
-          style={{
-            ...styles.textStyle.boldText,
-            fontSize: '28px',
-          }}
-        >
-          {socialInteractions}
-        </div>
+      <div className={classnames(styles.column, styles.leftColumn)}>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.socialInteraction}>{socialInteractions}</div>
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          marginLeft: 'auto',
-        }}
-      >
-        <div style={{ marginBottom: '30px', marginLeft: 'auto' }}>
-          <img src={icon} />
-        </div>
-
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            marginTop: '10px',
-            marginLeft: '10px',
-          }}
-        >
+      <div className={classnames(styles.column, styles.rightColumn)}>
+        <img className={styles.socialIcon} src={icon} />
+        <div className={styles.activityContainer}>
           <div>
-            <img
-              src={activityIcon}
-              style={{ marginRight: '4px', marginBottom: '5px' }}
-            />
+            <img className={styles.activityIcon} src={activityIcon} />
           </div>
           <div
-            style={{
-              ...styles.textStyle.boldText,
-              marginBottom: '1px',
-              marginRight: '1px',
-              color: activityTextColor,
-              fontSize: '11px',
-            }}
+            className={styles.activityNumber}
+            style={{ color: activityColor }}
           >{`${percentage.toString()}%`}</div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 
