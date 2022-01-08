@@ -2,6 +2,15 @@
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
 
+.card {
+  width: 85%;
+  color: $black;
+
+  @include media-desktop() {
+    width: 200%;
+  }
+}
+
 .topLine {
   height: 2px;
 

@@ -61,7 +61,9 @@ const App = () => {
 
           <div className={styles.overviewTitle}>Overview - Today</div>
 
-          <div className={classnames(styles.cardsContainer)}>
+          <div
+            className={classnames(styles.cardsContainer, styles.cardsTodayTop)}
+          >
             {TODAY_CARDS_TOP.map((card) => (
               <li key={card.id}>
                 <TodayCard
@@ -76,7 +78,7 @@ const App = () => {
             ))}
           </div>
 
-          <div className={classnames(styles.cardsContainer)}>
+          <div className={styles.cardsContainer}>
             {TODAY_CARDS_BOTTOM.map((card) => (
               <li key={card.id}>
                 <TodayCard

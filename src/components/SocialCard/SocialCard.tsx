@@ -28,7 +28,6 @@ const SocialCard = ({
   topLineColor,
   isIncreasedActivity,
   theme,
-  className,
 }: ISocialCard) => {
   const followersText = isFollowers ? 'FOLLOWERS' : 'SUBSCRIBERS';
   const socialInteractions =
@@ -37,7 +36,7 @@ const SocialCard = ({
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
 
   return (
-    <Card theme={theme} className={className}>
+    <Card theme={theme} className={styles.card}>
       <div className={styles.topLine} style={{ background: topLineColor }} />
       <div className={styles.mainContentContainer}>
         <div className={styles.iconContainer}>

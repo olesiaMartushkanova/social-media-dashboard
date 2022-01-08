@@ -40,17 +40,17 @@ const TodayCard = ({
     : 'hsl(356, 69%, 56%)';
 
   return (
-    <Card theme={theme} className={styles.mainContentContainer}>
+    <Card
+      theme={theme}
+      className={classnames(styles.mainContentContainer, styles.card)}
+    >
       <div className={classnames(styles.column, styles.leftColumn)}>
         <div className={styles.title}>{title}</div>
         <div className={styles.socialInteraction}>{socialInteractions}</div>
       </div>
 
       <div className={classnames(styles.column, styles.rightColumn)}>
-        <div>
-          <img className={styles.socialIcon} src={icon} />
-        </div>
-
+        <img className={styles.socialIcon} src={icon} />
         <div className={styles.activityContainer}>
           <div>
             <img className={styles.activityIcon} src={activityIcon} />
