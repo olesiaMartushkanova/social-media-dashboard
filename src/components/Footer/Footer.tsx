@@ -4,16 +4,20 @@ import classnames from 'classnames';
 import styles from './Footer.module.scss';
 import { Theme } from '../../context/ThemeContext';
 
-const Footer = ({ theme }: ITheme) => {
+interface IFooter extends ITheme {
+  className?: string;
+}
+
+const Footer = ({ theme, className }: IFooter) => {
   const dark = theme === Theme.Dark;
 
   return (
     <div
-      className={classnames(styles.footer, {
+      className={classnames(className, styles.footer, {
         [styles.footerDark]: dark,
       })}
     >
-      {`Challenge by `}
+      {'Challenge by '}
       <a
         className={classnames(styles.link, {
           [styles.linkDark]: dark,

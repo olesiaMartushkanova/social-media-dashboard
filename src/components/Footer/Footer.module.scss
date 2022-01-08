@@ -1,8 +1,17 @@
 @import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 .footer {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
   font-size: 14px;
-  align-self: center;
+  font-weight: $standard-text;
+
+  @include media-desktop() {
+    font-size: 25px;
+    bottom: 0px;
+  }
 }
 
 .link {

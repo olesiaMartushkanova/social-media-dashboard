@@ -1,12 +1,16 @@
 // TODO: need to replace import with use
 @import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
 
 .card {
   background-color: $very-pale-blue;
   box-sizing: content-box;
   width: 85%;
-  // TODO: add mobile style here
   color: $black;
+
+  @include media-desktop() {
+    width: 200%;
+  }
 }
 
 .cardDark {

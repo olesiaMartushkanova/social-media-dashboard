@@ -44,6 +44,7 @@ const App = () => {
             {SOCIAL_CARDS.map((card) => (
               <li key={card.id}>
                 <SocialCard
+                  className={styles.card}
                   id={card.id}
                   iconTitle={card.iconTitle}
                   interactions={card.interactions}
@@ -75,7 +76,12 @@ const App = () => {
             ))}
           </div>
 
-          <div className={styles.cardsContainer}>
+          <div
+            className={classnames(
+              styles.cardsContainer,
+              styles.bottomTodayCards,
+            )}
+          >
             {TODAY_CARDS_BOTTOM.map((card) => (
               <li key={card.id}>
                 <TodayCard
@@ -88,9 +94,9 @@ const App = () => {
                 />
               </li>
             ))}
-            <Footer theme={theme} />
           </div>
         </div>
+        <Footer theme={theme} className={styles.footer} />
       </div>
     </ThemeContext.Provider>
   );

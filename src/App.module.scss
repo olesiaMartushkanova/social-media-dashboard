@@ -1,4 +1,5 @@
 @import './scss/variables.scss';
+@import './scss/mixins.scss';
 
 .link {
   color: red;
@@ -15,11 +16,20 @@
   font-weight: $bold-text;
   margin-left: 25px;
   margin-top: 35px;
+
+  @include media-desktop() {
+    margin-left: 30px;
+  }
 }
 
 .mainTitle {
   font-size: 28px;
   margin-bottom: 5px;
+  letter-spacing: 0.5px;
+
+  @include media-desktop() {
+    font-size: 40px;
+  }
 }
 
 .socialMediaContainer {
@@ -38,6 +48,10 @@
   justify-content: space-between;
   width: 80vw;
   margin-bottom: 25px;
+
+  @include media-desktop() {
+    justify-content: none;
+  }
 }
 
 .switchToggleLabel {
@@ -51,10 +65,19 @@
   flex-direction: column;
   justify-content: space-between;
   list-style-type: none;
+
+  @include media-desktop() {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 li {
   margin-bottom: 20px;
+}
+
+.bottomTodayCards {
+  margin: 0 auto;
 }
 
 .overviewTitle {
@@ -65,4 +88,8 @@ li {
 
 .appDark {
   background-color: $very-dark-blue-bg;
+}
+
+.footer {
+  flex-shrink: 0;
 }
