@@ -24,76 +24,89 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div
-        className={classnames(styles.appContainer, {
-          [styles.appDark]: theme === Theme.Dark,
+        className={classnames(styles.body, {
+          [styles.bodyDark]: theme === Theme.Dark,
         })}
       >
-        <div className={styles.socialMediaContainer}>
-          <div className={styles.mainTitle}>Social Media Dashboard</div>
+        <div className={classnames(styles.appContainer)}>
+          <div className={styles.socialMediaContainer}>
+            <div
+              className={classnames(styles.mainTitle, {
+                [styles.mainTitleDark]: theme === Theme.Dark,
+              })}
+            >
+              Social Media Dashboard
+            </div>
 
-          <div className={styles.totalFollowersText}>
-            Total Followers: 23,004
+            <div className={styles.totalFollowersText}>
+              Total Followers: 23,004
+            </div>
+
+            <div className={styles.toggleContainer}>
+              <label className={styles.switchToggleLabel}>Light Mode</label>
+              <SwitchToggle onToggle={handleOnToggle} />
+            </div>
+
+            <div className={styles.cardsContainer}>
+              {SOCIAL_CARDS.map((card) => (
+                <li key={card.id}>
+                  <SocialCard
+                    className={styles.card}
+                    id={card.id}
+                    iconTitle={card.iconTitle}
+                    interactions={card.interactions}
+                    todayStatistic={card.todayStatistic}
+                    icon={card.icon}
+                    topLineColor={card.topLineColor}
+                    isFollowers={card.isFollowers}
+                    isIncreasedActivity={card.isIncreasedActivity}
+                    theme={theme}
+                  />
+                </li>
+              ))}
+            </div>
+
+            <div className={styles.overviewTitle}>Overview - Today</div>
+
+            <div
+              className={classnames(
+                styles.cardsContainer,
+                styles.cardsTodayTop,
+              )}
+            >
+              {TODAY_CARDS_TOP.map((card) => (
+                <li key={card.id}>
+                  <TodayCard
+                    id={card.id}
+                    title={card.title}
+                    icon={card.icon}
+                    interactions={card.interactions}
+                    percentage={card.percentage}
+                    isIncreasedActivity={card.isIncreasedActivity}
+                    theme={theme}
+                  />
+                </li>
+              ))}
+            </div>
+
+            <div className={styles.cardsContainer}>
+              {TODAY_CARDS_BOTTOM.map((card) => (
+                <li key={card.id}>
+                  <TodayCard
+                    id={card.id}
+                    title={card.title}
+                    icon={card.icon}
+                    interactions={card.interactions}
+                    percentage={card.percentage}
+                    isIncreasedActivity={card.isIncreasedActivity}
+                    theme={theme}
+                  />
+                </li>
+              ))}
+            </div>
           </div>
-
-          <div className={styles.toggleContainer}>
-            <label className={styles.switchToggleLabel}>Light Mode</label>
-            <SwitchToggle onToggle={handleOnToggle} />
-          </div>
-
-          <div className={styles.cardsContainer}>
-            {SOCIAL_CARDS.map((card) => (
-              <li key={card.id}>
-                <SocialCard
-                  className={styles.card}
-                  id={card.id}
-                  iconTitle={card.iconTitle}
-                  interactions={card.interactions}
-                  todayStatistic={card.todayStatistic}
-                  icon={card.icon}
-                  topLineColor={card.topLineColor}
-                  isFollowers={card.isFollowers}
-                  isIncreasedActivity={card.isIncreasedActivity}
-                  theme={theme}
-                />
-              </li>
-            ))}
-          </div>
-
-          <div className={styles.overviewTitle}>Overview - Today</div>
-
-          <div
-            className={classnames(styles.cardsContainer, styles.cardsTodayTop)}
-          >
-            {TODAY_CARDS_TOP.map((card) => (
-              <li key={card.id}>
-                <TodayCard
-                  id={card.id}
-                  title={card.title}
-                  icon={card.icon}
-                  interactions={card.interactions}
-                  percentage={card.percentage}
-                  isIncreasedActivity={card.isIncreasedActivity}
-                />
-              </li>
-            ))}
-          </div>
-
-          <div className={styles.cardsContainer}>
-            {TODAY_CARDS_BOTTOM.map((card) => (
-              <li key={card.id}>
-                <TodayCard
-                  id={card.id}
-                  title={card.title}
-                  icon={card.icon}
-                  interactions={card.interactions}
-                  percentage={card.percentage}
-                  isIncreasedActivity={card.isIncreasedActivity}
-                />
-              </li>
-            ))}
-          </div>
+          <Footer theme={theme} className={styles.footer} />
         </div>
-        <Footer theme={theme} className={styles.footer} />
       </div>
     </ThemeContext.Provider>
   );
