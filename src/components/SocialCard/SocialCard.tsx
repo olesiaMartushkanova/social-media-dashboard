@@ -16,6 +16,7 @@ export interface ISocialCard extends ITheme {
   topLineColor: string;
   isIncreasedActivity: boolean;
   isFollowers: boolean;
+  className?: string;
 }
 
 const SocialCard = ({
@@ -27,6 +28,7 @@ const SocialCard = ({
   topLineColor,
   isIncreasedActivity,
   theme,
+  className,
 }: ISocialCard) => {
   const followersText = isFollowers ? 'FOLLOWERS' : 'SUBSCRIBERS';
   const socialInteractions =
@@ -35,7 +37,7 @@ const SocialCard = ({
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
 
   return (
-    <Card theme={theme}>
+    <Card theme={theme} className={className}>
       <div className={styles.topLine} style={{ background: topLineColor }} />
       <div className={styles.mainContentContainer}>
         <div className={styles.iconContainer}>
