@@ -37,6 +37,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 80vw;
+  margin-bottom: 25px;
 }
 
 .switchToggleLabel {
@@ -50,7 +51,6 @@
   flex-direction: column;
   justify-content: space-between;
   list-style-type: none;
-  margin-top: 25px;
 }
 
 li {
@@ -59,7 +59,8 @@ li {
 
 .overviewTitle {
   color: $dark-greyish-blue;
-  font-size: 25px;
+  font-size: 20px;
+  margin-bottom: 22px;
 }
 
 .appDark {

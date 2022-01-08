@@ -88,8 +88,8 @@ const App = () => {
                 />
               </li>
             ))}
+            <Footer theme={theme} />
           </div>
-          {/* <Footer theme={theme} /> */}
         </div>
       </div>
     </ThemeContext.Provider>
