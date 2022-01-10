@@ -6,6 +6,7 @@ import IconUp from '../../images/icon-up.svg';
 import { ITheme } from '../../utils/types';
 import styles from './SocialCard.module.scss';
 import Card from '../Base/Card/Card';
+import { Theme } from '../../context/ThemeContext';
 
 export interface ISocialCard extends ITheme {
   id: string;
@@ -41,8 +42,15 @@ const SocialCard = ({
       <div className={styles.mainContentContainer}>
         <div className={styles.iconContainer}>
           <img className={styles.image} src={icon} />
-          <div>{iconTitle}</div>
+          <div
+            className={classnames(styles.iconTitle, {
+              [styles.iconTitleDark]: theme === Theme.Dark,
+            })}
+          >
+            {iconTitle}
+          </div>
         </div>
+
         <div className={styles.socialInteractionsNumber}>
           {socialInteractions}
         </div>

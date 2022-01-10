@@ -46,7 +46,13 @@ const TodayCard = ({
       className={classnames(styles.mainContentContainer, styles.card)}
     >
       <div className={classnames(styles.column, styles.leftColumn)}>
-        <div className={styles.title}>{title}</div>
+        <div
+          className={classnames(styles.title, {
+            [styles.titleDark]: theme === Theme.Dark,
+          })}
+        >
+          {title}
+        </div>
         <div
           className={classnames(styles.socialInteraction, {
             [styles.socialInteractionDark]: theme === Theme.Dark,

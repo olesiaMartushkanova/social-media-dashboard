@@ -69,12 +69,17 @@
 
 .title {
   font-weight: $bold-text;
-  color: $dark-greyish-blue;
+  color: $dark-greyish-blue-text;
   font-size: 12px;
+  color: $black;
 
   @include media-desktop() {
     font-size: 14px;
   }
+}
+
+.titleDark {
+  color: $dark-desaturated-blue-text;
 }
 
 .activityNumber {

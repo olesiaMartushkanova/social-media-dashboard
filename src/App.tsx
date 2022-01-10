@@ -38,7 +38,11 @@ const App = () => {
               Social Media Dashboard
             </div>
 
-            <div className={styles.totalFollowersText}>
+            <div
+              className={classnames(styles.totalFollowersText, {
+                [styles.darkSubtitle]: theme === Theme.Dark,
+              })}
+            >
               Total Followers: 23,004
             </div>
 
@@ -66,7 +70,13 @@ const App = () => {
               ))}
             </div>
 
-            <div className={styles.overviewTitle}>Overview - Today</div>
+            <div
+              className={classnames(styles.overviewTitle, {
+                [styles.darkSubtitle]: theme === Theme.Dark,
+              })}
+            >
+              Overview - Today
+            </div>
 
             <div
               className={classnames(
