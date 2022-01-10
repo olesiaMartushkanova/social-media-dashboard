@@ -59,6 +59,11 @@
   justify-content: space-between;
   width: 80vw;
   margin-bottom: 25px;
+
+  @include media-desktop() {
+    justify-content: flex-end;
+    width: 86vw;
+  }
 }
 
 .switchToggleLabel {

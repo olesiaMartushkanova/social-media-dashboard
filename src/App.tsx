@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Footer from './components/Footer/Footer';
 import SocialCard from './components/SocialCard/SocialCard';
 import SwitchToggle from './components/SwitchToggle/SwitchToggle';
@@ -14,12 +14,6 @@ const App = () => {
 
   const handleOnToggle = () =>
     setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
-
-  useEffect(() => {
-    return theme === Theme.Dark
-      ? document.body.classList.add('dark')
-      : document.body.classList.remove('dark');
-  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -47,7 +41,13 @@ const App = () => {
             </div>
 
             <div className={styles.toggleContainer}>
-              <label className={styles.switchToggleLabel}>Light Mode</label>
+              <label
+                className={classnames(styles.switchToggleLabel, {
+                  [styles.darkSubtitle]: theme === Theme.Dark,
+                })}
+              >
+                Light Mode
+              </label>
               <SwitchToggle onToggle={handleOnToggle} />
             </div>
 
