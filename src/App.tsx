@@ -15,6 +15,8 @@ const App = () => {
   const handleOnToggle = () =>
     setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
 
+  const switchToggleLabelText = Theme.Light ? 'Dark Mode' : 'Light Mode';
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div
@@ -46,7 +48,7 @@ const App = () => {
                   [styles.darkSubtitle]: theme === Theme.Dark,
                 })}
               >
-                Light Mode
+                {switchToggleLabelText}
               </label>
               <SwitchToggle onToggle={handleOnToggle} />
             </div>
