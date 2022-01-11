@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import Footer from './components/Footer/Footer';
 import SocialCard from './components/SocialCard/SocialCard';
 import SwitchToggle from './components/SwitchToggle/SwitchToggle';
@@ -7,7 +8,6 @@ import { Theme, ThemeContext } from './context/ThemeContext';
 import { SOCIAL_CARDS } from './data/socialCards';
 import { TODAY_CARDS_BOTTOM, TODAY_CARDS_TOP } from './data/todayCards';
 import styles from './App.module.scss';
-import classnames from 'classnames';
 
 const App = () => {
   const [theme, setTheme] = React.useState(Theme.Light);
@@ -15,7 +15,8 @@ const App = () => {
   const handleOnToggle = () =>
     setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
 
-  const switchToggleLabelText = Theme.Light ? 'Dark Mode' : 'Light Mode';
+  const switchToggleLabelText =
+    theme === Theme.Light ? 'Dark Mode' : 'Light Mode';
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -50,7 +51,7 @@ const App = () => {
               >
                 {switchToggleLabelText}
               </label>
-              <SwitchToggle onToggle={handleOnToggle} />
+              <SwitchToggle onToggle={handleOnToggle} theme={theme} />
             </div>
 
             <div className={styles.cardsContainer}>

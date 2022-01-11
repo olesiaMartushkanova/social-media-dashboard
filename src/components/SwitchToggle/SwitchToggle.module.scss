@@ -25,13 +25,17 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: hsl(230, 22%, 74%);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.sliderDark {
   background-image: linear-gradient(
     to right,
     hsl(210, 78%, 56%),
     hsl(146, 68%, 55%)
   );
-  transition: 0.4s;
-  border-radius: 34px;
 }
 
 .slider::before {
@@ -42,7 +46,7 @@
   background-color: white;
   height: 16px;
   width: 16px;
-  left: 4px;
+  right: 4px;
   bottom: 4px;
 
   @include media-desktop() {
@@ -52,10 +56,10 @@
 }
 
 input:checked + .slider::before {
-  transform: translateX(21px);
+  transform: translateX(-21px);
   background-color: hsl(230, 17%, 14%);
 
   @include media-desktop() {
-    transform: translateX(26px);
+    transform: translateX(-26px);
   }
 }
