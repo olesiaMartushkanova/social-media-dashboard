@@ -116,7 +116,7 @@ li {
 }
 
 .hr {
-  color: $dark-greyish-blue-text;
+  border-color: $dark-greyish-blue-text;
   margin-bottom: 15px;
   width: 85%;
   margin-left: 0px;
@@ -124,4 +124,8 @@ li {
   @include media-desktop() {
     visibility: hidden;
   }
+}
+
+.hrDark {
+  border-color: $dark-greyish-blue-text;
 }

@@ -43,7 +43,11 @@ const App = () => {
               Total Followers: 23,004
             </div>
 
-            <hr className={styles.hr} />
+            <hr
+              className={classnames(styles.hr, {
+                [styles.hrDark]: theme === Theme.Dark,
+              })}
+            />
 
             <div className={styles.toggleContainer}>
               <label
