@@ -6,6 +6,7 @@ import { ITheme } from '../../utils/types';
 import { convertNumberToShortThousands } from '../../utils/convertNumber';
 import Card from '../Base/Card/Card';
 import styles from './TodayCard.module.scss';
+import { Theme } from '../../context/ThemeContext';
 
 type TodayCardTitleType =
   | 'Page Views'
@@ -45,8 +46,20 @@ const TodayCard = ({
       className={classnames(styles.mainContentContainer, styles.card)}
     >
       <div className={classnames(styles.column, styles.leftColumn)}>
-        <div className={styles.title}>{title}</div>
-        <div className={styles.socialInteraction}>{socialInteractions}</div>
+        <div
+          className={classnames(styles.title, {
+            [styles.titleDark]: theme === Theme.Dark,
+          })}
+        >
+          {title}
+        </div>
+        <div
+          className={classnames(styles.socialInteraction, {
+            [styles.socialInteractionDark]: theme === Theme.Dark,
+          })}
+        >
+          {socialInteractions}
+        </div>
       </div>
 
       <div className={classnames(styles.column, styles.rightColumn)}>
