@@ -1,5 +1,3 @@
-# THIS PROJECT IS IN PROGRESS 
-
 # Frontend Mentor - Social media dashboard with theme switcher
 
 [Social media dashboard with theme switcher coding challenge](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H)
@@ -10,14 +8,11 @@
 
 - UI building Library: React
 - Language: TypeScript
-
-# Styling:
-
-- SASS CSS
+- CSS library: [Sass](https://sass-lang.com/)
 
 # Testing:
 
-- Manual visual component testing: [Storybook](https://storybook.js.org/)
+- Manual visual component testing has been impplemented with [Storybook](https://storybook.js.org/)
 
 
 ## Expected outcomes
@@ -34,3 +29,13 @@ Your users should be able to:
 ```
 yarn && yarn start
 ```
+
+## What I have learned while I was working on this project
+
+1. **Sass** library for keeping my CSS CLEAN and DRY
+2. **Context API** from React for managing global states in application
+3. How to setup from scratch **Storybook**
+4. Practiced more React
+5. Practiced building responsive applications
+
+
