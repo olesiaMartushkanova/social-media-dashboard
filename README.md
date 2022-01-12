@@ -10,7 +10,7 @@
 - Language: TypeScript
 - CSS library: [Sass](https://sass-lang.com/)
 
-## Testing:
+## Testing
 
 - Manual visual component testing has been impplemented with [Storybook](https://storybook.js.org/)
 
@@ -42,11 +42,11 @@ yarn && yarn start
 
 ## View the project
 
-### Desktop:
+### Desktop
 
 https://user-images.githubusercontent.com/48032815/149122762-42242311-0ec9-490f-a44d-098c5ea891da.mov
 
-### Mobile:
+### Mobile
 
 
 https://user-images.githubusercontent.com/48032815/149122795-907bc6bd-5ef0-4982-8d06-3c50facc689a.mov
