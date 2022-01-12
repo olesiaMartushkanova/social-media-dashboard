@@ -12,7 +12,7 @@
 
 ## Testing
 
-- Manual visual component testing has been impplemented with [Storybook](https://storybook.js.org/)
+- Manual visual component testing has been implemented with [Storybook](https://storybook.js.org/)
 
 
 ## Expected outcomes
