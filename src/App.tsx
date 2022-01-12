@@ -43,6 +43,8 @@ const App = () => {
               Total Followers: 23,004
             </div>
 
+            <hr className={styles.hr} />
+
             <div className={styles.toggleContainer}>
               <label
                 className={classnames(styles.switchToggleLabel, {
