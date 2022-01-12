@@ -32,13 +32,14 @@ yarn && yarn start
 
 ## What I have learned while I was working on this project
 
-1. **Sass** library for keeping my CSS CLEAN and DRY.
-2. **Context API** from React for managing global states in application.
-3. How to setup from scratch **Storybook**.
-4. Practiced more React.
-5. Practiced building responsive applications.
-6. Practices **mobile first** development approach.
-7. **Never** use inline CSS or JavaScript CSS if you need to build a lot of components with the custom design. Librariles like Sass are better for such projects.
+1. How to setup React project from scratch with [Webpack](https://webpack.js.org/)
+2. **Sass** library for keeping my CSS CLEAN and DRY.
+3. **Context API** from React for managing global states in application.
+4. How to setup from scratch **Storybook**.
+5. Practiced more React.
+6. Practiced building responsive applications.
+7. Practices **mobile first** development approach.
+8. **Never** use inline CSS or JavaScript CSS if you need to build a lot of components with the custom design. Librariles like Sass are better for such projects.
 
 ## View the project
 
