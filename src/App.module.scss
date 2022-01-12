@@ -122,6 +122,6 @@ li {
   margin-left: 0px;
 
   @include media-desktop() {
-    width: 0%;
+    visibility: hidden;
   }
 }
