@@ -36,9 +36,6 @@ const TodayCard = ({
     convertNumberToShortThousands(interactions).toString();
 
   const activityIcon = isIncreasedActivity ? IconUp : IconDown;
-  const activityColor = isIncreasedActivity
-    ? 'hsl(163, 72%, 41%)'
-    : 'hsl(356, 69%, 56%)';
 
   return (
     <Card
@@ -69,8 +66,12 @@ const TodayCard = ({
             <img className={styles.activityIcon} src={activityIcon} />
           </div>
           <div
-            className={styles.activityNumber}
-            style={{ color: activityColor }}
+            className={classnames(
+              styles.activityNumber,
+              isIncreasedActivity
+                ? styles.activityNumberIsIncreased
+                : styles.activityNumberIsDecreased,
+            )}
           >{`${percentage.toString()}%`}</div>
         </div>
       </div>
