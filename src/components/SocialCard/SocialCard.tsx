@@ -71,7 +71,7 @@ const SocialCard = ({
                 ? styles.todayNumberIsIncreased
                 : styles.todayNumberIsDecreased,
             )}
-          >{`${todayStatistic.toString()} Today`}</div>
+          >{`${todayStatistic} Today`}</div>
         </div>
       </div>
     </Card>

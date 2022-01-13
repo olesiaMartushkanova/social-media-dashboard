@@ -72,7 +72,7 @@ const TodayCard = ({
                 ? styles.activityNumberIsIncreased
                 : styles.activityNumberIsDecreased,
             )}
-          >{`${percentage.toString()}%`}</div>
+          >{`${percentage}%`}</div>
         </div>
       </div>
     </Card>
