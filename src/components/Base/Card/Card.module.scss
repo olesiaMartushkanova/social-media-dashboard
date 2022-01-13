@@ -7,17 +7,17 @@
   box-sizing: border-box;
   color: $black;
   cursor: pointer;
-}
 
-.card:hover {
-  filter: brightness(90%);
-}
-
-.cardDark:hover {
-  filter: brightness(120%);
+  &:hover {
+    filter: brightness(90%);
+  }
 }
 
 .cardDark {
   background-color: $dark-desaturated-blue-bg;
   color: $white;
+
+  &:hover {
+    filter: brightness(120%);
+  }
 }
