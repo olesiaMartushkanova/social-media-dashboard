@@ -65,7 +65,12 @@ const SocialCard = ({
           </div>
 
           <div
-            className={styles.todayNumber}
+            className={classnames(
+              styles.todayNumber,
+              isIncreasedActivity
+                ? styles.todayNumberIsIncreased
+                : styles.todayNumberIsDecreased,
+            )}
           >{`${todayStatistic.toString()} Today`}</div>
         </div>
       </div>

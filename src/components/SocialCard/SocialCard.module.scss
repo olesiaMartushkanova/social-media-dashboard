@@ -89,6 +89,14 @@
   }
 }
 
+.todayNumberIsIncreased {
+  color: $lime-green;
+}
+
+.todayNumberIsDecreased {
+  color: $bright-red;
+}
+
 .activityContainer {
   display: flex;
   flex-direction: row;
