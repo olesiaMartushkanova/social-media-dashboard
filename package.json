@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --port 3000",
-    "build:webpack": "webpack build --config ./webpack.config.js",
+    "build": "webpack build --config ./webpack.config.js",
+    "predeploy": "export CI=false && yarn lint && yarn build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint -c .eslintrc.json --ignore-path .eslintignore --max-warnings 0 --fix  \"*/**/*.{ts,tsx}\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
