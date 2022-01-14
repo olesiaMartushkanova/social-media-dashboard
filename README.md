@@ -43,14 +43,20 @@ yarn && yarn start
 
 ## View the project
 
+### View online
+
+Project is deployed with Github Actions on every push to `master` branch to Github Pages: [View project online](https://olesiamartushkanova.github.io/social-media-dashboard/)
+
 ### Desktop
 
-https://user-images.githubusercontent.com/48032815/149122762-42242311-0ec9-490f-a44d-098c5ea891da.mov
+https://user-images.githubusercontent.com/48032815/149500375-95673a8e-e0ea-4940-b180-768071c95642.mov
+
 
 ### Mobile
 
 
-https://user-images.githubusercontent.com/48032815/149122795-907bc6bd-5ef0-4982-8d06-3c50facc689a.mov
+
+https://user-images.githubusercontent.com/48032815/149500400-49764df5-d1ff-4992-a3e0-9bf8d0ae3324.mov
 
 
 
