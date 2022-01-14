@@ -51,6 +51,14 @@
   margin-bottom: 3px;
 }
 
+.activityNumberIsIncreased {
+  color: $lime-green;
+}
+
+.activityNumberIsDecreased {
+  color: $bright-red;
+}
+
 .socialInteraction {
   margin-top: 18px;
   margin-bottom: auto;
