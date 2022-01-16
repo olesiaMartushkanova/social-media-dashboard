@@ -1,26 +1,15 @@
 @import './scss/variables.scss';
 @import './scss/mixins.scss';
 
-.body {
-  color: $white;
-  margin: 0px;
-  width: auto;
-}
-
-.bodyDark {
-  background-color: $very-dark-blue-bg;
-}
-
-.link {
-  color: red;
-}
-
 .appContainer {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  font-family: 'Inter', sans-serif;
   font-weight: $bold-text;
+  color: $white;
+  margin: 0px;
+  width: 100vw;
+  font-family: 'Inter', sans-serif;
   margin-left: 25px;
 
   @include media-desktop() {
