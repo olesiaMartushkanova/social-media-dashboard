@@ -8,9 +8,10 @@
   font-weight: $bold-text;
   color: $white;
   margin: 0px;
-  width: 100vw;
-  font-family: 'Inter', sans-serif;
+  width: auto;
+  margin-right: 25px;
   margin-left: 25px;
+  font-family: 'Inter', sans-serif;
 
   @include media-desktop() {
     margin-right: 80px;
@@ -21,7 +22,7 @@
 }
 
 .mainTitle {
-  font-size: 28px;
+  font-size: 24px;
   margin-bottom: 5px;
   letter-spacing: 0.5px;
   color: $black;
@@ -46,7 +47,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 80vw;
   margin-bottom: 25px;
 
   @include media-desktop() {
@@ -107,7 +107,6 @@ li {
 .hr {
   border-color: $dark-greyish-blue-text;
   margin-bottom: 15px;
-  width: 85%;
   margin-left: 0px;
 
   @include media-desktop() {

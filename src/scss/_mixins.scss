@@ -12,3 +12,10 @@
     @content;
   }
 }
+
+@mixin desktop-card {
+  @include media-desktop() {
+    width: 300px;
+    height: auto;
+  }
+}

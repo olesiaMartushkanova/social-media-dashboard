@@ -3,13 +3,7 @@
 @import '../../scss/mixins.scss';
 
 .card {
-  width: 85%;
-  color: $black;
-
-  @include media-desktop() {
-    width: 300px;
-    height: 125px;
-  }
+  @include desktop-card();
 }
 
 .mainContentContainer {
