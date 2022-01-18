@@ -84,11 +84,7 @@
 }
 
 .activityNumber {
-  font-size: 10px;
-
-  @include media-desktop() {
-    font-size: 14px;
-  }
+  @include activity-number-font-size();
 }
 
 .socialIcon {

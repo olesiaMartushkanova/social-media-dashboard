@@ -76,11 +76,10 @@
 .todayNumber {
   color: $lime-green;
   margin-bottom: 10px;
-  font-size: 10px;
+  @include activity-number-font-size();
 
   @include media-desktop() {
     margin-bottom: 20px;
-    font-size: 14px;
   }
 }
 
