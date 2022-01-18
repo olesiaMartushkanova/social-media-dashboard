@@ -25,3 +25,8 @@
     font-size: 12px;
   }
 }
+
+@mixin activity-icon-size {
+  width: 7px;
+  height: auto;
+}

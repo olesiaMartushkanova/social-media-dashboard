@@ -98,6 +98,5 @@
 }
 
 .activityIcon {
-  width: 7px;
-  height: auto;
+  @include activity-icon-size();
 }

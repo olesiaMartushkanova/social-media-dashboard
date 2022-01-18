@@ -63,7 +63,6 @@ const SocialCard = ({
               src={activityIcon}
             />
           </div>
-
           <div
             className={classnames(
               styles.todayNumber,

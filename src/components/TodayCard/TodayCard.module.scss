@@ -41,8 +41,7 @@
 }
 
 .activityIcon {
-  margin-right: 4px;
-  margin-bottom: 3px;
+  @include activity-icon-size();
 }
 
 .activityNumberIsIncreased {
