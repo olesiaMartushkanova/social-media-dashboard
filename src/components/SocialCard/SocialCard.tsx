@@ -44,7 +44,7 @@ const SocialCard = ({
           <img
             className={styles.image}
             src={icon}
-            alt={'social card social icon'}
+            alt={'socialCardSocialIcon'}
           />
           <div
             className={classnames(styles.iconTitle, {
@@ -65,7 +65,7 @@ const SocialCard = ({
             <img
               className={classnames(styles.image, styles.activityIcon)}
               src={activityIcon}
-              alt={'Social card activity icon'}
+              alt={'SocialCardActivityIcon'}
             />
           </div>
           <div

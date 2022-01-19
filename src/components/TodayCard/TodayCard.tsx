@@ -63,14 +63,14 @@ const TodayCard = ({
         <img
           className={styles.socialIcon}
           src={icon}
-          alt={'Today card social icon'}
+          alt={'TodayCardSocialIcon'}
         />
         <div className={styles.activityContainer}>
           <div>
             <img
               className={styles.activityIcon}
               src={activityIcon}
-              alt={'Today card activity icon'}
+              alt={'TodayCardActivityIcon'}
             />
           </div>
           <div
