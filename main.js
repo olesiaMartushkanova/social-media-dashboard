@@ -37003,7 +37003,7 @@ const SocialCard = ({ icon, iconTitle, interactions, todayStatistic, isFollowers
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].topLine, style: { background: topLineColor } }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].mainContentContainer },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].iconContainer },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].image, src: icon, alt: 'social card social icon' }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].image, src: icon, alt: 'socialCardSocialIcon' }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].iconTitle, {
                         [_SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].iconTitleDark]: theme === _context_ThemeContext__WEBPACK_IMPORTED_MODULE_7__.Theme.Dark,
                     }) }, iconTitle)),
@@ -37011,7 +37011,7 @@ const SocialCard = ({ icon, iconTitle, interactions, todayStatistic, isFollowers
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].followers }, followersText),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].activityContainer },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].image, _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].activityIcon), src: activityIcon, alt: 'Social card activity icon' })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].image, _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].activityIcon), src: activityIcon, alt: 'SocialCardActivityIcon' })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].todayNumber, isIncreasedActivity
                         ? _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].todayNumberIsIncreased
                         : _SocialCard_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].todayNumberIsDecreased) }, `${todayStatistic} Today`)))));
@@ -37096,10 +37096,10 @@ const TodayCard = ({ title, interactions, icon, percentage, isIncreasedActivity,
                     [_TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].socialInteractionDark]: theme === _context_ThemeContext__WEBPACK_IMPORTED_MODULE_7__.Theme.Dark,
                 }) }, socialInteractions)),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].column, _TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].rightColumn) },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: _TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].socialIcon, src: icon, alt: 'Today card social icon' }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: _TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].socialIcon, src: icon, alt: 'TodayCardSocialIcon' }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].activityContainer },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: _TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].activityIcon, src: activityIcon, alt: 'Today card activity icon' })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: _TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].activityIcon, src: activityIcon, alt: 'TodayCardActivityIcon' })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].activityNumber, isIncreasedActivity
                         ? _TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].activityNumberIsIncreased
                         : _TodayCard_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].activityNumberIsDecreased) }, `${percentage}%`)))));
