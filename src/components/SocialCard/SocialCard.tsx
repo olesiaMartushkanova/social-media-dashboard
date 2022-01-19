@@ -41,7 +41,11 @@ const SocialCard = ({
       <div className={styles.topLine} style={{ background: topLineColor }} />
       <div className={styles.mainContentContainer}>
         <div className={styles.iconContainer}>
-          <img className={styles.image} src={icon} />
+          <img
+            className={styles.image}
+            src={icon}
+            alt={'social card social icon'}
+          />
           <div
             className={classnames(styles.iconTitle, {
               [styles.iconTitleDark]: theme === Theme.Dark,
@@ -61,6 +65,7 @@ const SocialCard = ({
             <img
               className={classnames(styles.image, styles.activityIcon)}
               src={activityIcon}
+              alt={'Social card activity icon'}
             />
           </div>
           <div
