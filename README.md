@@ -49,14 +49,20 @@ Project is deployed with Github Actions on every push to `master` branch to Gith
 
 ### Desktop
 
-https://user-images.githubusercontent.com/48032815/149500375-95673a8e-e0ea-4940-b180-768071c95642.mov
+
+
+https://user-images.githubusercontent.com/48032815/150095381-1fa2261e-6cdd-4669-8082-928004a1095a.mov
+
 
 
 ### Mobile
 
 
 
-https://user-images.githubusercontent.com/48032815/149500400-49764df5-d1ff-4992-a3e0-9bf8d0ae3324.mov
+
+https://user-images.githubusercontent.com/48032815/150095405-3f114948-722d-40f9-8dca-cbf1fee2ed98.mov
+
+
 
 
 
