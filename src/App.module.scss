@@ -14,7 +14,6 @@
   font-family: 'Inter', sans-serif;
 
   @include media-desktop() {
-    margin-right: 80px;
     margin-left: 80px;
     width: auto;
     height: 100vh;
