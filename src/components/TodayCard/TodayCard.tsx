@@ -60,10 +60,18 @@ const TodayCard = ({
       </div>
 
       <div className={classnames(styles.column, styles.rightColumn)}>
-        <img className={styles.socialIcon} src={icon} />
+        <img
+          className={styles.socialIcon}
+          src={icon}
+          alt={'Today card social icon'}
+        />
         <div className={styles.activityContainer}>
           <div>
-            <img className={styles.activityIcon} src={activityIcon} />
+            <img
+              className={styles.activityIcon}
+              src={activityIcon}
+              alt={'Today card activity icon'}
+            />
           </div>
           <div
             className={classnames(

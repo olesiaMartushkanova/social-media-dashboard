@@ -3,13 +3,7 @@
 @import '../../scss/mixins.scss';
 
 .card {
-  width: 85%;
-  color: $black;
-
-  @include media-desktop() {
-    width: 300px;
-    height: 125px;
-  }
+  @include desktop-card();
 }
 
 .mainContentContainer {
@@ -47,8 +41,9 @@
 }
 
 .activityIcon {
-  margin-right: 4px;
-  margin-bottom: 3px;
+  @include activity-icon-size();
+  margin-bottom: 7px;
+  margin-right: 5px;
 }
 
 .activityNumberIsIncreased {
@@ -90,11 +85,7 @@
 }
 
 .activityNumber {
-  font-size: 10px;
-
-  @include media-desktop() {
-    font-size: 14px;
-  }
+  @include activity-number-font-size();
 }
 
 .socialIcon {

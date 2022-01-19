@@ -3,12 +3,7 @@
 @import '../../scss/mixins.scss';
 
 .card {
-  width: 85%;
-  color: $black;
-
-  @include media-desktop() {
-    width: 200%;
-  }
+  @include desktop-card();
 }
 
 .topLine {
@@ -43,7 +38,7 @@
 }
 
 .iconTitle {
-  color: $black;
+  color: $dark-greyish-blue-text;
 }
 
 .iconTitleDark {
@@ -81,11 +76,10 @@
 .todayNumber {
   color: $lime-green;
   margin-bottom: 10px;
-  font-size: 10px;
+  @include activity-number-font-size();
 
   @include media-desktop() {
     margin-bottom: 20px;
-    font-size: 14px;
   }
 }
 
@@ -104,6 +98,5 @@
 }
 
 .activityIcon {
-  width: 7px;
-  height: auto;
+  @include activity-icon-size();
 }

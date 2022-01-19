@@ -1,6 +1,5 @@
 @import './variables.scss';
 
-// Breakpoints media query
 @mixin screen-media($breakpoint) {
   @media (min-width: $breakpoint) {
     @content;
@@ -11,4 +10,23 @@
   @include screen-media($size-desktop) {
     @content;
   }
+}
+
+@mixin desktop-card {
+  @include media-desktop() {
+    width: 300px;
+    height: auto;
+  }
+}
+
+@mixin activity-number-font-size {
+  font-size: 10px;
+  @include media-desktop() {
+    font-size: 12px;
+  }
+}
+
+@mixin activity-icon-size {
+  width: 7px;
+  height: auto;
 }
