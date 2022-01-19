@@ -61,7 +61,7 @@ const App = () => {
             <SwitchToggle onToggle={handleOnToggle} theme={theme} />
           </div>
 
-          <div className={styles.cardsContainer}>
+          <ul className={styles.cardsContainer}>
             {SOCIAL_CARDS.map((card) => (
               <li key={card.id}>
                 <SocialCard
@@ -78,7 +78,7 @@ const App = () => {
                 />
               </li>
             ))}
-          </div>
+          </ul>
 
           <div
             className={classnames(styles.overviewTitle, {
@@ -88,7 +88,7 @@ const App = () => {
             Overview - Today
           </div>
 
-          <div
+          <ul
             className={classnames(styles.cardsContainer, styles.cardsTodayTop)}
           >
             {TODAY_CARDS_TOP.map((card) => (
@@ -104,9 +104,9 @@ const App = () => {
                 />
               </li>
             ))}
-          </div>
+          </ul>
 
-          <div className={styles.cardsContainer}>
+          <ul className={styles.cardsContainer}>
             {TODAY_CARDS_BOTTOM.map((card) => (
               <li key={card.id}>
                 <TodayCard
@@ -120,7 +120,7 @@ const App = () => {
                 />
               </li>
             ))}
-          </div>
+          </ul>
         </div>
         <Footer theme={theme} className={styles.footer} />
       </div>
