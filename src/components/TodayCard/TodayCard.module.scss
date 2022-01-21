@@ -1,15 +1,14 @@
-// TODO: need to replace import with use
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
+@use '../../scss/variables.scss';
+@use '../../scss/mixins.scss';
 
 .card {
-  @include desktop-card();
+  @include mixins.desktop-card();
 }
 
 .mainContentContainer {
   display: flex;
   justify-content: space-between;
-  font-weight: $bold-text;
+  font-weight: variables.$bold-text;
 }
 
 .column {
@@ -35,23 +34,23 @@
   margin-top: 22px;
   margin-bottom: auto;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     margin-top: 40px;
   }
 }
 
 .activityIcon {
-  @include activity-icon-size();
+  @include mixins.activity-icon-size();
   margin-bottom: 7px;
   margin-right: 5px;
 }
 
 .activityNumberIsIncreased {
-  color: $lime-green;
+  color: variables.$lime-green;
 }
 
 .activityNumberIsDecreased {
-  color: $bright-red;
+  color: variables.$bright-red;
 }
 
 .socialInteraction {
@@ -60,32 +59,32 @@
   font-size: 24px;
   letter-spacing: 1px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     font-size: 35px;
     margin-top: 35px;
   }
 }
 
 .socialInteractionDark {
-  color: $white;
+  color: variables.$white;
 }
 
 .title {
-  font-weight: $bold-text;
-  color: $dark-greyish-blue-text;
+  font-weight: variables.$bold-text;
+  color: variables.$dark-greyish-blue-text;
   font-size: 12px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     font-size: 14px;
   }
 }
 
 .titleDark {
-  color: $dark-desaturated-blue-text;
+  color: variables.$dark-desaturated-blue-text;
 }
 
 .activityNumber {
-  @include activity-number-font-size();
+  @include mixins.activity-number-font-size();
 }
 
 .socialIcon {
@@ -93,7 +92,7 @@
   height: auto;
   margin-left: 15px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     width: 20px;
     height: auto;
     margin-left: 22px;

@@ -1,4 +1,4 @@
-@import '../../scss/mixins.scss';
+@use '../../scss/mixins.scss';
 
 .switch {
   position: relative;
@@ -6,7 +6,7 @@
   width: 42px;
   height: 24px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     width: 60px;
     height: 34px;
   }
@@ -47,7 +47,7 @@
   right: 4px;
   bottom: 4px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     height: 26px;
     width: 26px;
   }
@@ -57,7 +57,7 @@ input:checked + .slider::before {
   transform: translateX(-21px);
   background-color: hsl(230, 17%, 14%);
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     transform: translateX(-26px);
   }
 }

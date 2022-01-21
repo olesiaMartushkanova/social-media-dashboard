@@ -1,11 +1,9 @@
-// TODO: need to replace import with use
-@import '../../../scss/variables.scss';
-@import '../../../scss/mixins.scss';
+@use '../../../scss/variables.scss';
 
 .card {
-  background-color: $very-pale-blue;
+  background-color: variables.$very-pale-blue;
   box-sizing: border-box;
-  color: $black;
+  color: variables.$black;
   cursor: pointer;
 
   &:hover {
@@ -14,8 +12,8 @@
 }
 
 .cardDark {
-  background-color: $dark-desaturated-blue-bg;
-  color: $white;
+  background-color: variables.$dark-desaturated-blue-bg;
+  color: variables.$white;
 
   &:hover {
     filter: brightness(120%);
