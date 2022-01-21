@@ -1,19 +1,19 @@
-@import './scss/variables.scss';
-@import './scss/mixins.scss';
+@use './scss/variables.scss';
+@use './scss/mixins.scss';
 
 .appContainer {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  font-weight: $bold-text;
-  color: $white;
+  font-weight: variables.$bold-text;
+  color: variables.$white;
   margin: 0px;
   width: auto;
   margin-right: 25px;
   margin-left: 25px;
   font-family: 'Inter', sans-serif;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     margin-left: 80px;
     width: auto;
     height: 100vh;
@@ -24,21 +24,21 @@
   font-size: 24px;
   margin-bottom: 5px;
   letter-spacing: 0.5px;
-  color: $black;
+  color: variables.$black;
   margin-top: 30px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     font-size: 40px;
     margin-top: 70px;
   }
 }
 
 .mainTitleDark {
-  color: $white;
+  color: variables.$white;
 }
 
 .totalFollowersText {
-  color: $dark-greyish-blue-text;
+  color: variables.$dark-greyish-blue-text;
   margin-bottom: 15px;
 }
 
@@ -48,14 +48,14 @@
   justify-content: space-between;
   margin-bottom: 25px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     justify-content: flex-end;
     width: 86vw;
   }
 }
 
 .switchToggleLabel {
-  color: $dark-greyish-blue-text;
+  color: variables.$dark-greyish-blue-text;
   font-size: 12px;
   margin-right: 25px;
 }
@@ -66,7 +66,7 @@
   justify-content: space-between;
   list-style-type: none;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -74,7 +74,7 @@
   }
 }
 
-@include media-desktop() {
+@include mixins.media-desktop() {
   .cardsTodayTop {
     margin-bottom: 15px;
   }
@@ -83,38 +83,38 @@
 li {
   margin-bottom: 20px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     margin: 0 auto 0 0;
   }
 }
 
 .overviewTitle {
-  color: $dark-greyish-blue-text;
+  color: variables.$dark-greyish-blue-text;
   font-size: 20px;
   margin-bottom: 22px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     font-size: 28px;
     margin-top: 40px;
   }
 }
 
 .darkSubtitle {
-  color: $dark-desaturated-blue-text;
+  color: variables.$dark-desaturated-blue-text;
 }
 
 .hr {
-  border-color: $dark-greyish-blue-text;
+  border-color: variables.$dark-greyish-blue-text;
   margin-bottom: 15px;
   margin-left: 0px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     visibility: hidden;
   }
 }
 
 .hrDark {
-  border-color: $dark-greyish-blue-text;
+  border-color: variables.$dark-greyish-blue-text;
 }
 
 .footer {

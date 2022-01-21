@@ -1,4 +1,4 @@
-@import './variables.scss';
+@use './variables.scss';
 
 @mixin screen-media($breakpoint) {
   @media (min-width: $breakpoint) {
@@ -7,7 +7,7 @@
 }
 
 @mixin media-desktop {
-  @include screen-media($size-desktop) {
+  @include screen-media(variables.$size-desktop) {
     @content;
   }
 }

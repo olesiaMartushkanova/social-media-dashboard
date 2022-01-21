@@ -1,15 +1,15 @@
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
+@use '../../scss/variables.scss';
+@use '../../scss/mixins.scss';
 
 .footer {
   display: flex;
   flex-flow: column wrap;
   text-align: center;
   font-size: 14px;
-  font-weight: $standard-text;
-  color: $black;
+  font-weight: variables.$standard-text;
+  color: variables.$black;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     font-size: 18px;
     bottom: 0px;
   }
@@ -20,9 +20,9 @@
 }
 
 .footerDark {
-  color: $white;
+  color: variables.$white;
 }
 
 .linkDark {
-  color: $white;
+  color: variables.$white;
 }

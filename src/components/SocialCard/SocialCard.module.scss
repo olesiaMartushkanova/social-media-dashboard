@@ -1,15 +1,14 @@
-// TODO: need to replace import with use
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
+@use '../../scss/variables.scss';
+@use '../../scss/mixins.scss';
 
 .card {
-  @include desktop-card();
+  @include mixins.desktop-card();
 }
 
 .topLine {
   height: 2px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     height: 4px;
   }
 }
@@ -18,19 +17,19 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  font-weight: $bold-text;
+  font-weight: variables.$bold-text;
 }
 
 .iconContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: $dark-greyish-blue-text;
+  color: variables.$dark-greyish-blue-text;
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 10px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 14px;
@@ -38,11 +37,11 @@
 }
 
 .iconTitle {
-  color: $dark-greyish-blue-text;
+  color: variables.$dark-greyish-blue-text;
 }
 
 .iconTitleDark {
-  color: $dark-desaturated-blue-text;
+  color: variables.$dark-desaturated-blue-text;
 }
 
 .image {
@@ -58,7 +57,7 @@
   letter-spacing: 2px;
   margin-bottom: 20px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     font-size: 14px;
     letter-spacing: 5px;
     margin-bottom: 20px;
@@ -68,27 +67,27 @@
 .socialInteractionsNumber {
   font-size: 40px;
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     font-size: 45px;
   }
 }
 
 .todayNumber {
-  color: $lime-green;
+  color: variables.$lime-green;
   margin-bottom: 10px;
-  @include activity-number-font-size();
+  @include mixins.activity-number-font-size();
 
-  @include media-desktop() {
+  @include mixins.media-desktop() {
     margin-bottom: 20px;
   }
 }
 
 .todayNumberIsIncreased {
-  color: $lime-green;
+  color: variables.$lime-green;
 }
 
 .todayNumberIsDecreased {
-  color: $bright-red;
+  color: variables.$bright-red;
 }
 
 .activityContainer {
@@ -98,5 +97,5 @@
 }
 
 .activityIcon {
-  @include activity-icon-size();
+  @include mixins.activity-icon-size();
 }

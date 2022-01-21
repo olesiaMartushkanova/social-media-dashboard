@@ -1,0 +1,21 @@
+@use '../../../scss/variables.scss';
+
+.card {
+  background-color: variables.$very-pale-blue;
+  box-sizing: border-box;
+  color: variables.$black;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+
+.cardDark {
+  background-color: variables.$dark-desaturated-blue-bg;
+  color: variables.$white;
+
+  &:hover {
+    filter: brightness(120%);
+  }
+}
