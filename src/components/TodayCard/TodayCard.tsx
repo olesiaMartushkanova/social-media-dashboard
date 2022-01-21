@@ -4,7 +4,7 @@ import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { ITheme } from '../../utils/types';
 import { convertNumberToShortThousands } from '../../utils/convertNumber';
-import Card from '../Base/Card/Card';
+import Card from '../Primitives/Card/Card';
 import styles from './TodayCard.module.scss';
 import { Theme } from '../../context/ThemeContext';
 

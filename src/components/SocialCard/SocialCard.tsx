@@ -5,7 +5,7 @@ import IconDown from '../../images/icon-down.svg';
 import IconUp from '../../images/icon-up.svg';
 import { ITheme } from '../../utils/types';
 import styles from './SocialCard.module.scss';
-import Card from '../Base/Card/Card';
+import Card from '../Primitives/Card/Card';
 import { Theme } from '../../context/ThemeContext';
 
 export interface ISocialCard extends ITheme {
